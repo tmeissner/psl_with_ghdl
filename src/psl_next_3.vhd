@@ -20,12 +20,15 @@ architecture psl of psl_next_3 is
 begin
 
 
+  --                              01234567890
   SEQ_A : sequencer generic map ("__-_-______") port map (clk, a);
   SEQ_B : sequencer generic map ("_____-_-___") port map (clk, b);
 
+  --                              01234567890
   SEQ_C : sequencer generic map ("__-_-______") port map (clk, c);
   SEQ_D : sequencer generic map ("_____-_____") port map (clk, d);
 
+  --                              01234567890
   SEQ_E : sequencer generic map ("__-_-______") port map (clk, e);
   SEQ_F : sequencer generic map ("_____-----_") port map (clk, f);
 
@@ -36,7 +39,7 @@ begin
   -- This assertion holds
   NEXT_0_a : assert always (a -> next[3] (b));
 
-  -- This assertion doesn't hold at cycle 8
+  -- This assertion doesn't hold at cycle 7
   NEXT_1_a : assert always (c -> next[3] (d));
 
   -- This assertion holds

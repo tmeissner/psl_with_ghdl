@@ -21,7 +21,7 @@ end entity sequencer;
 
 architecture rtl of sequencer is
 
-  signal cycle : natural := 0;
+  signal index : natural := seq'low;
   signal ch    : character;
 
 begin
@@ -30,13 +30,13 @@ begin
   process (clk) is
   begin
     if rising_edge(clk) then
-      if (cycle < seq'length) then
-        cycle <= cycle + 1;
+      if (index < seq'high) then
+        index <= index + 1;
       end if;
     end if;
   end process;
 
-  ch <= seq(cycle+1);
+  ch <= seq(index);
 
   data <= to_bit(ch);
 

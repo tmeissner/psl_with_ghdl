@@ -16,7 +16,7 @@ The next two lists will grow during furter development
 * implication operator
 * next operator
 * next[i] operator
-* next_event operator
+* next_event() operator
 
 ## PSL features currently unsupported by GHDL:
 

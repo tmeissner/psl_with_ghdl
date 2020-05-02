@@ -19,9 +19,11 @@ architecture psl of psl_next is
 begin
 
 
+  --                              012345678901
   SEQ_A : sequencer generic map ("_-__--__-__") port map (clk, a);
   SEQ_B : sequencer generic map ("_--__--__--") port map (clk, b);
 
+  --                              012345678901
   SEQ_C : sequencer generic map ("_-__--__-__") port map (clk, c);
   SEQ_D : sequencer generic map ("_--__-___--") port map (clk, d);
 

@@ -18,16 +18,17 @@ architecture psl of psl_always is
 begin
 
 
-  SEQ : sequencer generic map ("_-_-_") port map (clk, a);
+  --                            012345
+  SEQ : sequencer generic map ("--____") port map (clk, a);
 
 
   -- All is sensitive to rising edge of clk
   default clock is rising_edge(clk);
 
-  -- Signal a has to be low at cycle 0 only
+  -- This assertion holds
   WITHOUT_ALWAYS_a : assert a;
 
-  -- Signal a has to be low forever
+  -- This assertion doesn't hold at cycle 2
   WITH_ALWAYS_a : assert always a;
 
 
