@@ -1,0 +1,21 @@
+name: 'tests'
+
+on: [ push, pull_request ]
+
+jobs:
+
+#  simulation:
+#    runs-on: ubuntu-latest
+#    steps:
+#    - uses: actions/checkout@v1
+#      with:
+#        submodules: recursive
+#    - run: docker run --rm -tv $(pwd):/src -w /src/test -e BUILD_NAME=ACCEPTANCE ghdl/vunit:llvm make all
+
+  formal:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v1
+      with:
+        submodules: recursive
+    - run: docker run --rm -tv $(pwd):/src -w /src/formal -e BUILD_NAME=ACCEPTANCE ghdl/synth:formal make all

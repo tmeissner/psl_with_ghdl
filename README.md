@@ -1,3 +1,5 @@
+[![tests](https://github.com/tmeissner/psl_with_ghdl/workflows/tests/badge.svg?branch=master)](https://github.com/tmeissner/psl_with_ghdl/actions?query=workflow%3Atests)
+
 # psl_with_ghdl
 
 A collection of examples of using PSL for functional and formal verification of VHDL with GHDL (and SymbiYosys).
