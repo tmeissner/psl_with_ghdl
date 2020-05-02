@@ -29,6 +29,7 @@ begin
   SEQ_E : sequencer generic map ("__-_-______") port map (clk, e);
   SEQ_F : sequencer generic map ("_____-----_") port map (clk, f);
 
+
   -- All is sensitive to rising edge of clk
   default clock is rising_edge(clk);
 
