@@ -25,8 +25,17 @@ begin
   -- All is sensitive to rising edge of clk
   default clock is rising_edge(clk);
 
+  -- Beware: potential pitfall!
+  -- Every time a PSL assertion is similar to a concurrent
+  -- VHDL assertion at that place, it is interpreted as such
+  -- This assert is considered as VHDL assert statement,
+  -- so it is active every cycle
+  -- This assertion doesn't hold at cycle 2
+  VHDL_ASSERT_a : assert a;
+
+  -- The PSL comment helps to mark this as PSL assert
   -- This assertion holds
-  WITHOUT_ALWAYS_a : assert a;
+  -- psl WITHOUT_ALWAYS_a : assert a;
 
   -- This assertion doesn't hold at cycle 2
   WITH_ALWAYS_a : assert always a;
