@@ -22,6 +22,7 @@ The next two lists will grow during further development
 * next_event[n] operator
 * until operator
 * until_ operator
+* eventually! operator (simulation, synthesis throws an error)
 
 ## PSL features not yet supported by GHDL:
 
