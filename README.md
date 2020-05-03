@@ -20,6 +20,8 @@ The next two lists will grow during further development
 * next[n] operator
 * next_event operator
 * next_event[n] operator
+* until operator
+* until_ operator
 
 ## PSL features not yet supported by GHDL:
 
