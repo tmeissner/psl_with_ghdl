@@ -17,10 +17,13 @@ The next two lists will grow during furter development
 * never operator
 * implication operator
 * next operator
-* next[i] operator
-* next_event() operator
+* next[n] operator
+* next_event operator
+* next_event[n] operator
 
 ## PSL features currently unsupported by GHDL:
 
 * next_a[i:j] operator
 * next_e[i:j] operator
+* next_event_a[i:j] operator
+* next_event_e[i:j] operator
