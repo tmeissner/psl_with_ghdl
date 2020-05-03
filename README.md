@@ -5,7 +5,7 @@
 A collection of examples of using PSL for functional and formal verification of VHDL with GHDL (and SymbiYosys).
 
 
-The next two lists will grow during furter development
+The next two lists will grow during further development
 
 ## PSL features supported by GHDL:
 
@@ -21,7 +21,7 @@ The next two lists will grow during furter development
 * next_event operator
 * next_event[n] operator
 
-## PSL features currently unsupported by GHDL:
+## PSL features not yet supported by GHDL:
 
 * next_a[i:j] operator
 * next_e[i:j] operator
