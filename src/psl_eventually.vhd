@@ -27,7 +27,8 @@ begin
   default clock is rising_edge(clk);
 
   -- This assertion holds
-  EVENTUALLY_a : assert always (a -> eventually! b);
+  -- This assertion leads to a GHDL synthesis crash with bug report
+  --EVENTUALLY_a : assert always (a -> eventually! b);
 
 
 end architecture psl;

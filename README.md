@@ -38,4 +38,4 @@ The next two lists will grow during further development
 
 ## PSL features supported by GHDL but with wrong behaviour
 
-* before_ operator (Overlapping between left & right side not working, see psl_before.vhd)
+* before_ operator (Seems that LHS & RHS of operator have to be active at same cycle, see psl_before.vhd)

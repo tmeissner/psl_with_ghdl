@@ -47,9 +47,9 @@ begin
 
   -- This is flawed variant of the former assertion
   -- because even in cycle 1 the b before a property has
-  -- to hold, which is clearly what we want
+  -- to hold, which is clearly not what we want
   -- This assertion doesn't hold at cycle 1
-  -- Furthermore this assertion leads to a GHDL crash with bug report
+  -- Furthermore this assertion leads to a GHDL synthesis crash with bug report
   -- BEFORE_3_a : assert always (a -> (b before a));
 
   -- This assertion should hold but does not at cycle 3
@@ -58,7 +58,7 @@ begin
 
   -- This assertion should hold but does not at cycle 9
   -- Potential GHDL bug?
-   BEFORE_5_a : assert always (c -> next (d before_ c));
+  BEFORE_5_a : assert always (c -> next (d before_ c));
 
   -- This assertion doesn't at cycle 6
   BEFORE_6_a : assert always (e -> next (f before_ e));
