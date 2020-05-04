@@ -4,6 +4,10 @@
 
 A collection of examples of using PSL for functional and formal verification of VHDL with GHDL (and SymbiYosys).
 
+This is a project with the purpose to get a current state of PSL implementation in GHDL. It probably will find unsupported PSL features, incorrect implemented features or simple bugs like GHDL crashs.
+
+It is also intended for experiments with PSL when learning the language. You can play around with the examples, as they are pretty simple. You can comment out failing assertions if you want to have a sucessful proof os simulation if you want. You can change them to see what happens. Have fun!
+
 
 The next two lists will grow during further development
 
@@ -22,7 +26,8 @@ The next two lists will grow during further development
 * next_event[n] operator
 * until operator
 * until_ operator
-* eventually! operator (simulation, synthesis throws an error)
+* before operator (GHDL crash with a specific property, see psl_before.vhd)
+* eventually! operator (simulation, synthesis produces a GHDL crash, see psl_eventually.vhd)
 
 ## PSL features not yet supported by GHDL:
 
@@ -30,3 +35,7 @@ The next two lists will grow during further development
 * next_e[i:j] operator
 * next_event_a[i:j] operator
 * next_event_e[i:j] operator
+
+## PSL features supported by GHDL but with wrong behaviour
+
+* before_ operator (Overlapping between left & right side not working, see psl_before.vhd)
