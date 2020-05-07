@@ -6,7 +6,7 @@ A collection of examples of using PSL for functional and formal verification of 
 
 This is a project with the purpose to get a current state of PSL implementation in GHDL. It probably will find unsupported PSL features, incorrect implemented features or simple bugs like GHDL crashs.
 
-It is also intended for experiments with PSL when learning the language. You can play around with the examples, as they are pretty simple. You can comment out failing assertions if you want to have a sucessful proof os simulation if you want. You can change them to see what happens. Have fun!
+It is also intended for experiments with PSL when learning the language. You can play around with the examples, as they are pretty simple. You can comment out failing assertions if you want to have a successful proof or simulation if you want. You can change them to see what happens. Have fun!
 
 
 The next two lists will grow during further development
@@ -22,6 +22,7 @@ The next two lists will grow during further development
 * implication operator
 * next operator
 * next[n] operator
+* next_a[i to j] operator
 * next_event operator
 * next_event[n] operator
 * until operator
@@ -31,10 +32,9 @@ The next two lists will grow during further development
 
 ## PSL features not yet supported by GHDL:
 
-* next_a[i:j] operator
-* next_e[i:j] operator
-* next_event_a[i:j] operator
-* next_event_e[i:j] operator
+* next_e[i to j] operator
+* next_event_a[i to j] operator
+* next_event_e[i to j] operator
 
 ## PSL features supported by GHDL but with wrong behaviour
 
