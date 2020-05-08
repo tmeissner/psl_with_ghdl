@@ -6,7 +6,13 @@ A collection of examples of using PSL for functional and formal verification of 
 
 This is a project with the purpose to get a current state of PSL implementation in GHDL. It probably will find unsupported PSL features, incorrect implemented features or simple bugs like GHDL crashs.
 
-It is also intended for experiments with PSL when learning the language. You can play around with the examples, as they are pretty simple. You can comment out failing assertions if you want to have a successful proof or simulation if you want. You can change them to see what happens. Have fun!
+It is also intended for experiments with PSL when learning the language. You can play around with the examples, as they are pretty simple. You can comment out failing assertions if you want to have a successful proof or simulation if you want. You can change them to see what happens.
+
+It is recommended to use an up-to-date version of GHDL as potential bugs are fixed very quickly. Especially the synthesis feature of GHDL is very new and still beta. You can build GHDL from source or use one of the Docker images which contain also the SymbiYosys toolchain. For example the `ghdl/synth:formal` image from Docker Hub. Beware, the Docker images aren't build every day, so it is possible that tests are failing until the image is updated.
+
+You can use my [Dockerfiles for SymbiYosys & GHDL(-synth)](https://github.com/tmeissner/Dockerfiles) to build the docker image on your own machine. Then you have a Docker image with the latest tool versions.
+
+Have fun!
 
 
 The next two lists will grow during further development
