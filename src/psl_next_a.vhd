@@ -16,6 +16,9 @@ architecture psl of psl_next_a is
   signal a, b : std_logic;
   signal c, d : std_logic;
   signal e, f : std_logic;
+  signal g, h : std_logic;
+  signal i, j : std_logic;
+  signal k, l : std_logic;
 
 begin
 
@@ -32,6 +35,18 @@ begin
   SEQ_E : sequencer generic map ("__-_-______") port map (clk, e);
   SEQ_F : sequencer generic map ("_____-----_") port map (clk, f);
 
+  --                              01234567890
+  SEQ_G : sequencer generic map ("__-_-______") port map (clk, g);
+  SEQ_H : sequencer generic map ("_____-_---_") port map (clk, h);
+
+  --                              012345678901
+  SEQ_I : sequencer generic map ("__-_-_______") port map (clk, i);
+  SEQ_J : sequencer generic map ("_____-__-___") port map (clk, j);
+
+  --                              0123456789
+  SEQ_K : sequencer generic map ("__-_-_____") port map (clk, k);
+  SEQ_L : sequencer generic map ("_______-__") port map (clk, l);
+
 
   -- All is sensitive to rising edge of clk
   default clock is rising_edge(clk);
@@ -44,6 +59,15 @@ begin
 
   -- This assertion holds
   NEXT_2_a : assert always (e -> next_a[3 to 5] (f));
+
+  -- This assertion doesn't hold at cycle 6
+  NEXT_3_a : assert always (g -> next_a[3 to 5] (h));
+
+   -- This assertion doesn't hold at cycle 6
+  NEXT_4_a : assert always (i -> next_a[3 to 5] (j));
+
+  -- This assertion doesn't hold at cycle 5
+  NEXT_5_a : assert always (k -> next_a[3 to 5] (l));
 
 
 end architecture psl;
