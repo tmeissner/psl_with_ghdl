@@ -23,6 +23,7 @@ The next two lists will grow during further development
 * next operator
 * next[n] operator
 * next_a[i to j] operator
+* next_e[i to j] operator
 * next_event operator
 * next_event[n] operator
 * until operator
@@ -32,7 +33,6 @@ The next two lists will grow during further development
 
 ## PSL features not yet supported by GHDL:
 
-* next_e[i to j] operator
 * next_event_a[i to j] operator
 * next_event_e[i to j] operator
 
