@@ -1,0 +1,19 @@
+[tasks]
+prove
+
+[options]
+depth 25
+prove: mode bmc
+
+[engines]
+prove: smtbmc z3
+
+[script]
+prove: ghdl --std=08 pkg.vhd sequencer.vhd hex_sequencer.vhd psl_next_event_a.vhd -e psl_next_event_a
+prep -top psl_next_event_a
+
+[files]
+../src/pkg.vhd
+../src/sequencer.vhd
+../src/hex_sequencer.vhd
+../src/psl_next_event_a.vhd
