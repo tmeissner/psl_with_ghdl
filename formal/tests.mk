@@ -7,6 +7,7 @@ psl_next_a \
 psl_next_e \
 psl_next_event \
 psl_next_event_4 \
+psl_next_event_e \
 psl_until \
 psl_before \
 psl_eventually

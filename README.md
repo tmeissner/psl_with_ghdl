@@ -32,6 +32,7 @@ The next two lists will grow during further development
 * next_e[i to j] operator
 * next_event operator
 * next_event[n] operator
+* next_event_e[i to j] operator
 * until operator
 * until_ operator
 * before operator (GHDL crash with a specific property, see psl_before.vhd)
@@ -39,9 +40,9 @@ The next two lists will grow during further development
 
 ## PSL features not yet supported by GHDL:
 
-* next_event_a[i to j] operator
-* next_event_e[i to j] operator
+* forall statement
 
 ## PSL features supported by GHDL but with wrong behaviour
 
 * before_ operator (Seems that LHS & RHS of operator have to be active at same cycle, see psl_before.vhd)
+* next_event_a[i to j] operator (Behaviour currently under verification)
