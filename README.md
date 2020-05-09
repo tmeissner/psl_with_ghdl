@@ -40,9 +40,10 @@ The next two lists will grow during further development
 
 ## PSL features not yet supported by GHDL:
 
+* Synthesis of strong operator versions
 * forall statement
 
 ## PSL features supported by GHDL but with wrong behaviour
 
 * before_ operator (Seems that LHS & RHS of operator have to be active at same cycle, see psl_before.vhd)
-* next_event_a[i to j] operator (Behaviour currently under verification)
+* next_event_a[i to j] operator (Behaviour currently under investigation)
