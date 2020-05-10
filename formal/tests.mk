@@ -12,4 +12,5 @@ psl_next_event_e \
 psl_next_event_a \
 psl_until \
 psl_before \
-psl_eventually
+psl_eventually \
+psl_sere

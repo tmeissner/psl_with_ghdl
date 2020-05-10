@@ -15,20 +15,22 @@ You can use my [Dockerfiles for SymbiYosys & GHDL(-synth)](https://github.com/tm
 Have fun!
 
 
-The next two lists will grow during further development
+The next lists will grow during further development
 
 ## PSL features supported by GHDL:
+
+### Directives
 
 * assert directive
 * cover directive
 * assume directive (synthesis)
 * restrict directive (synthesis)
 
+### Temporal operators (LTL style)
+
 * always operator
-* before operator (GHDL crash with a specific property, see psl_before.vhd)
-* eventually! operator (simulation, synthesis produces a GHDL crash, see psl_eventually.vhd)
-* logical implication operator
 * never operator
+* logical implication operator
 * next operator
 * next[n] operator
 * next_a[i to j] operator
@@ -38,6 +40,12 @@ The next two lists will grow during further development
 * next_event_e[i to j] operator
 * until operator
 * until_ operator
+* before operator (GHDL crash with a specific property, see psl_before.vhd)
+* eventually! operator (simulation, synthesis produces a GHDL crash, see psl_eventually.vhd)
+
+### Sequential Extended Regular Expressions (SERE style)
+
+* Simple SERE
 
 ## PSL features not yet supported by GHDL:
 

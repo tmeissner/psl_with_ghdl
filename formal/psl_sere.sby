@@ -1,0 +1,18 @@
+[tasks]
+prove
+
+[options]
+depth 25
+prove: mode bmc
+
+[engines]
+prove: smtbmc z3
+
+[script]
+prove: ghdl --std=08 pkg.vhd sequencer.vhd psl_sere.vhd -e psl_sere
+prep -top psl_sere
+
+[files]
+../src/pkg.vhd
+../src/sequencer.vhd
+../src/psl_sere.vhd
