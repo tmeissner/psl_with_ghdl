@@ -1,0 +1,18 @@
+[tasks]
+prove
+
+[options]
+depth 25
+prove: mode bmc
+
+[engines]
+prove: smtbmc z3
+
+[script]
+prove: ghdl --std=08 pkg.vhd sequencer.vhd psl_logical_implication.vhd -e psl_logical_implication
+prep -top psl_logical_implication
+
+[files]
+../src/pkg.vhd
+../src/sequencer.vhd
+../src/psl_logical_implication.vhd

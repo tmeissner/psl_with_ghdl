@@ -23,9 +23,12 @@ The next two lists will grow during further development
 * cover directive
 * assume directive (synthesis)
 * restrict directive (synthesis)
+
 * always operator
+* before operator (GHDL crash with a specific property, see psl_before.vhd)
+* eventually! operator (simulation, synthesis produces a GHDL crash, see psl_eventually.vhd)
+* logical implication operator
 * never operator
-* implication operator
 * next operator
 * next[n] operator
 * next_a[i to j] operator
@@ -35,13 +38,11 @@ The next two lists will grow during further development
 * next_event_e[i to j] operator
 * until operator
 * until_ operator
-* before operator (GHDL crash with a specific property, see psl_before.vhd)
-* eventually! operator (simulation, synthesis produces a GHDL crash, see psl_eventually.vhd)
 
 ## PSL features not yet supported by GHDL:
 
-* Synthesis of strong operator versions
 * forall statement
+* Synthesis of strong operator versions
 
 ## PSL features supported by GHDL but with wrong behaviour
 

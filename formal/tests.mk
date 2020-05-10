@@ -1,5 +1,6 @@
 psl_tests := \
 psl_always \
+psl_logical_implication \
 psl_never \
 psl_next \
 psl_next_3 \
