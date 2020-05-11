@@ -46,6 +46,7 @@ The next lists will grow during further development
 ### Sequential Extended Regular Expressions (SERE style)
 
 * Simple SERE
+* Overlapping suffix implication operator
 
 ## PSL features not yet supported by GHDL:
 
