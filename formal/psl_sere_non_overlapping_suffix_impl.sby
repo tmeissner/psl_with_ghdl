@@ -1,0 +1,18 @@
+[tasks]
+prove
+
+[options]
+depth 25
+prove: mode bmc
+
+[engines]
+prove: smtbmc z3
+
+[script]
+prove: ghdl --std=08 pkg.vhd sequencer.vhd psl_sere_non_overlapping_suffix_impl.vhd -e psl_sere_non_overlapping_suffix_impl
+prep -top psl_sere_non_overlapping_suffix_impl
+
+[files]
+../src/pkg.vhd
+../src/sequencer.vhd
+../src/psl_sere_non_overlapping_suffix_impl.vhd

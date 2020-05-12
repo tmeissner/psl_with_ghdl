@@ -30,7 +30,7 @@ The next lists will grow during further development
 
 * always operator
 * never operator
-* logical implication operator
+* logical implication operator (->)
 * next operator
 * next[n] operator
 * next_a[i to j] operator
@@ -46,7 +46,8 @@ The next lists will grow during further development
 ### Sequential Extended Regular Expressions (SERE style)
 
 * Simple SERE
-* Overlapping suffix implication operator
+* Overlapping suffix implication operator (|->)
+* Non overlapping suffix implication operator (|=>)
 
 ## PSL features not yet supported by GHDL:
 

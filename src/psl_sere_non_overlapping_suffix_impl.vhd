@@ -4,14 +4,14 @@ library ieee;
 use work.pkg.all;
 
 
-entity psl_sere_overlapping_suffix_impl is
+entity psl_sere_non_overlapping_suffix_impl is
   port (
     clk : in std_logic
   );
-end entity psl_sere_overlapping_suffix_impl;
+end entity psl_sere_non_overlapping_suffix_impl;
 
 
-architecture psl of psl_sere_overlapping_suffix_impl is
+architecture psl of psl_sere_non_overlapping_suffix_impl is
 
   signal a, b : std_logic;
 
@@ -27,13 +27,13 @@ begin
   default clock is rising_edge(clk);
 
   -- This assertion holds
-  SERE_0_a : assert always {a; a} |-> {a and b};
+  SERE_0_a : assert always {a; a} |=> {not a};
 
   -- This assertion doesn't hold at cycle 2
-  SERE_1_a : assert always {a; a} |-> next {a and b};
+  SERE_1_a : assert always {a; a} |=> {a and b};
 
   -- This assertion holds
-  SERE_2_a : assert always {not a; a} |-> next {b};
+  SERE_2_a : assert always {not a; a} |=> {b};
 
 
 end architecture psl;
