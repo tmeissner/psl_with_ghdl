@@ -1,15 +1,15 @@
 [tasks]
-prove
+bmc
 
 [options]
 depth 25
-prove: mode bmc
+bmc: mode bmc
 
 [engines]
-prove: smtbmc z3
+bmc: smtbmc z3
 
 [script]
-prove: ghdl --std=08 pkg.vhd sequencer.vhd psl_before.vhd -e psl_before
+bmc: ghdl --std=08 pkg.vhd sequencer.vhd psl_before.vhd -e psl_before
 prep -top psl_before
 
 [files]
