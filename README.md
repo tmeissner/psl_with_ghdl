@@ -48,6 +48,7 @@ The next lists will grow during further development
 * Simple SERE
 * Overlapping suffix implication operator (|->)
 * Non overlapping suffix implication operator (|=>)
+* Consecutive repetition operator ([*], [+], [*n], [*i to j])
 
 ## PSL features not yet supported by GHDL:
 
