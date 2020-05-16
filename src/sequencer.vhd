@@ -22,7 +22,6 @@ end entity sequencer;
 architecture rtl of sequencer is
 
   signal index : natural := seq'low;
-  signal ch    : character;
 
 begin
 
@@ -36,9 +35,7 @@ begin
     end if;
   end process;
 
-  ch <= seq(index);
-
-  data <= to_bit(ch);
+  data <= to_bit(seq(index));
 
 
 end architecture rtl;

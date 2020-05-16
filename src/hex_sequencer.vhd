@@ -21,8 +21,7 @@ end entity hex_sequencer;
 
 architecture rtl of hex_sequencer is
 
-  signal cycle : natural := 0;
-  signal ch    : character;
+  signal index : natural := seq'low;
 
 begin
 
@@ -30,15 +29,13 @@ begin
   process (clk) is
   begin
     if rising_edge(clk) then
-      if (cycle < seq'length) then
-        cycle <= cycle + 1;
+      if (index < seq'high) then
+        index <= index + 1;
       end if;
     end if;
   end process;
 
-  ch <= seq(cycle+1);
-
-  data <= to_hex(ch);
+  data <= to_hex(seq(index));
 
 
 end architecture rtl;
