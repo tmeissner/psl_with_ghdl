@@ -46,11 +46,7 @@ begin
     signal i_slv : std_logic_vector(b'range);
   begin
     i_slv <= std_logic_vector(to_unsigned(i, 4));
-    -- Without name it works
-    assert always ((a and b = i_slv) -> next_event_a(c)[1 to 4](b = i_slv));
-    -- This errors because of similar names for all asserts
-    -- ERROR: Assert `count_id(cell->name) == 0' failed in kernel/rtlil.cc:1613.
-    -- NEXT_EVENT_a : assert always ((a and b = i_slv) -> next_event_a(c)[1 to 4](b = i_slv));
+    NEXT_EVENT_a : assert always ((a and b = i_slv) -> next_event_a(c)[1 to 4](b = i_slv));
   end generate check_b;
 
 
