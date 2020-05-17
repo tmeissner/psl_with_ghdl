@@ -31,49 +31,79 @@ begin
   SEQ_F : sequencer generic map ("__-___") port map (clk, f);
 
   --                              012345678
-  SEQ_G : sequencer generic map ("_-_______") port map (clk, g);
-  SEQ_H : sequencer generic map ("__-_-_-__") port map (clk, h);
-  SEQ_I : sequencer generic map ("_______-_") port map (clk, i);
+  SEQ_G : sequencer generic map ("_-________") port map (clk, g);
+  SEQ_H : sequencer generic map ("__-_-_-___") port map (clk, h);
+  SEQ_I : sequencer generic map ("________-_") port map (clk, i);
 
 
   -- All is sensitive to rising edge of clk
   default clock is rising_edge(clk);
 
+  -- Simple SERE with repetitions done manual without operators
   -- This assertion holds
   SERE_0_a : assert always {a} |=> {b; b; b; b; c};
 
+  -- Repetition of 4 cycles
+  -- In all these cycles b has to be active
   -- This assertion holds
   SERE_1_a : assert always {a} |=> {b[*4]; c};
 
+  -- Repetition in range of 3 to 5 cycles
+  -- In all these cycles b has to be active
   -- This assertion holds
   SERE_2_a : assert always {a} |=> {b[*3 to 5]; c};
 
+  -- Repetition of any number of cycles, including none
+  -- In all these cycles b has to be active
   -- This assertion holds
   SERE_3_a : assert always {a} |=> {b[*]; c};
 
+  -- Repetition of any number of cycles, excluding none
+  -- In all these cycles b has to be active
   -- This assertion holds
   SERE_4_a : assert always {a} |=> {b[+]; c};
 
+  -- Repetition of any number of cycles, including none
+  -- In all these cycles e has to be active
   -- This assertion holds
   SERE_5_a : assert always {d} |=> {e[*]; f};
 
+  -- Repetition of any number of cycles, excluding none
+  -- In all these cycles e has to be active
   -- This assertion doesn't hold at cycle 2
   SERE_6_a : assert always {d} |=> {e[+]; f};
 
+  -- Repetition of 3 cycles
+  -- In all these cycles h has to be active
   -- This assertion doesn't hold at cycle 3
   SERE_7_a : assert always {g} |=> {h[*3]; i};
 
+  -- Repetition in range of 2 to 4 cycles
+  -- In all these cycles h has to be active
   -- This assertion doesn't hold at cycle 3
   SERE_8_a : assert always {g} |=> {h[*2 to 4]; i};
 
+  -- Repetition of any number of cycles, including none
+  -- In all these cycles h has to be active
   -- This assertion doesn't hold at cycle 3
   SERE_9_a : assert always {g} |=> {h[*]; i};
 
+  -- Repetition of any number of cycles, exluding none
+  -- In all these cycles h has to be active
   -- This assertion doesn't hold at cycle 3
   SERE_10_a : assert always {g} |=> {h[+]; i};
 
+  -- Repetition of any 6 cycles
   -- This assertion holds
-  SERE_11_a : assert always {g} |=> {[*5]; i};  
+  SERE_11_a : assert always {g} |=> {[*6]; i};
+
+  -- Upper bound can also be infinity
+  -- This assertion holds
+  SERE_12_a : assert always {g} |=> {[*6]; i; not i[*1 to inf]};
+
+  -- All repetition operators can also be used with SERE
+  -- This assertion holds
+  SERE_13_a : assert always {g} |=> {{h; not h}[*3]; i};
 
 
 end architecture psl;
