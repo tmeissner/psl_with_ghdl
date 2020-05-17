@@ -78,25 +78,25 @@ begin
 
 
   --                                 0123456789
-  SEQ_REQ  : sequencer generic map ("_-________") port map (clk, req);
-  SEQ_BUSY : sequencer generic map ("__-_-_-___") port map (clk, busy);
-  SEQ_DONE : sequencer generic map ("________-_") port map (clk, done);
+  SEQ_REQ  : sequencer generic map ("_-_______") port map (clk, req);
+  SEQ_BUSY : sequencer generic map ("__-_-_-__") port map (clk, busy);
+  SEQ_DONE : sequencer generic map ("_______-_") port map (clk, done);
 
 
   -- All is sensitive to rising edge of clk
   default clock is rising_edge(clk);
 
-  -- Non consecutive repetition of 3 cycles with possible padding
+  -- Non consecutive repetition of 3 cycles without padding
   -- busy has to hold on 3 cycles between req & done
   -- This assertion holds
   -- Not yet supported
-  SERE_0_a : assert always {req} |=> {busy[=3]; done};
+  SERE_0_a : assert always {req} |=> {busy[->3]; done};
 
-  -- Non consecutive repetition of 2 to 4 cycles with possible padding
+  -- Non consecutive repetition of 2 to 4 cycles without padding
   -- busy has to hold on 2 to 4 cycles between req & done
   -- This assertion holds
   -- Not yet supported
-  SERE_1_a : assert always {req} |=> {busy[=2 to 4]; done};
+  SERE_1_a : assert always {req} |=> {busy[->2 to 4]; done};
 
 
 end architecture psl;

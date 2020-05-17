@@ -54,6 +54,8 @@ The next lists will grow during further development
 
 * forall statement
 * Synthesis of strong operator versions
+* SERE non consecutive repetition operator ([=n], [=i to j])
+* SERE goto repetition operator ([->], [->n], [->i to j])
 
 ## PSL features supported by GHDL but with wrong behaviour
 
