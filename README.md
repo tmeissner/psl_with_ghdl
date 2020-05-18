@@ -70,3 +70,8 @@ The next lists will grow during further development
 * [Doulos Designer's Guide To PSL](https://www.doulos.com/knowhow/psl/)
 * [Project VeriPage PSL Tutorial](http://www.project-veripage.com/psl_tutorial_1.php)
 * [1850-2010 - IEEE Standard for PSL](https://standards.ieee.org/standard/1850-2010.html)
+* [A Practical Introduction to PSL Book](https://www.springer.com/gp/book/9780387361239)
+* [Formal Verification Book](https://www.elsevier.com/books/formal-verification/seligman/978-0-12-800727-3)
+* [PSL Specification for WISHBONE System-on-Chip (from the PROSYD project)](https://opencores.org/websvn/filedetails?repname=copyblaze&path=%2Fcopyblaze%2Ftrunk%2Fcopyblaze%2Fdoc%2Fdev%2FWishBone%2Fprosyd1.4_1_annex.pdf)
+* [GHDL documentation](https://ghdl.readthedocs.io)
+* [SymbiYosys documentation](https://symbiyosys.readthedocs.io)
