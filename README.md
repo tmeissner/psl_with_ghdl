@@ -2,7 +2,7 @@
 
 # psl_with_ghdl
 
-A collection of examples of using PSL for functional and formal verification of VHDL with GHDL (and SymbiYosys).
+A collection of examples of using [PSL](https://en.wikipedia.org/wiki/Property_Specification_Language) for functional and formal verification of VHDL designs with [GHDL](https://github.com/ghdl/ghdl) (and [Yosys](https://github.com/YosysHQ/yosys) / [SymbiYosys](https://github.com/YosysHQ/SymbiYosys)).
 
 This is a project with the purpose to get a current state of PSL implementation in GHDL. It probably will find unsupported PSL features, incorrect implemented features or simple bugs like GHDL crashs.
 
@@ -17,7 +17,7 @@ Have fun!
 
 The next lists will grow during further development
 
-## PSL features supported by GHDL:
+## Supported by GHDL:
 
 ### Directives
 
@@ -54,12 +54,19 @@ The next lists will grow during further development
 * Length-matching and operator (&&)
 * within operator
 
-## PSL features not yet supported by GHDL:
+## Not yet supported by GHDL:
 
 * forall statement
 * Synthesis of strong operator versions
 
-## PSL features under investigation
+## Under investigation
 
 * before_ operator (Seems that LHS & RHS of operator have to be active at same cycle, see psl_before.vhd)
 * next_event_a[i to j] operator
+
+## Further Ressources
+
+* [Wikipedia about PSL](https://en.wikipedia.org/wiki/Property_Specification_Language)
+* [Doulos Designer's Guide To PSL](https://www.doulos.com/knowhow/psl/)
+* [Project VeriPage PSL Tutorial](http://www.project-veripage.com/psl_tutorial_1.php)
+* [1850-2010 - IEEE Standard for PSL](https://standards.ieee.org/standard/1850-2010.html)
