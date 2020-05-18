@@ -58,7 +58,7 @@ The next lists will grow during further development
 * Synthesis of strong operator versions
 * SERE goto repetition operator ([->], [->n], [->i to j])
 
-## PSL features supported by GHDL, behaviour under investigation
+## PSL features under investigation
 
 * before_ operator (Seems that LHS & RHS of operator have to be active at same cycle, see psl_before.vhd)
 * next_event_a[i to j] operator (Behaviour currently under investigation)

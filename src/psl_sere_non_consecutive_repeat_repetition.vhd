@@ -4,14 +4,14 @@ library ieee;
 use work.pkg.all;
 
 
-entity psl_sere_consecutive_repeat_repetition is
+entity psl_sere_non_consecutive_repeat_repetition is
   port (
     clk : in std_logic
   );
-end entity psl_sere_consecutive_repeat_repetition;
+end entity psl_sere_non_consecutive_repeat_repetition;
 
 
-architecture psl of psl_sere_consecutive_repeat_repetition is
+architecture psl of psl_sere_non_consecutive_repeat_repetition is
 
   signal req, busy, done : std_logic;
 
