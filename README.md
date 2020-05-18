@@ -50,13 +50,13 @@ The next lists will grow during further development
 * Non overlapping suffix implication operator (|=>)
 * Consecutive repetition operator ([*], [+], [*n], [*i to j])
 * Non consecutive repetition operator ([=n], [=i to j])
+* Non consecutive goto repetition operator ([->], [->n], [->i to j])
 * within operator
 
 ## PSL features not yet supported by GHDL:
 
 * forall statement
 * Synthesis of strong operator versions
-* SERE goto repetition operator ([->], [->n], [->i to j])
 
 ## PSL features under investigation
 
