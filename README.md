@@ -51,6 +51,7 @@ The next lists will grow during further development
 * Consecutive repetition operator ([*], [+], [*n], [*i to j])
 * Non consecutive repetition operator ([=n], [=i to j])
 * Non consecutive goto repetition operator ([->], [->n], [->i to j])
+* Length-matching and operator (&&)
 * within operator
 
 ## PSL features not yet supported by GHDL:
@@ -61,4 +62,4 @@ The next lists will grow during further development
 ## PSL features under investigation
 
 * before_ operator (Seems that LHS & RHS of operator have to be active at same cycle, see psl_before.vhd)
-* next_event_a[i to j] operator (Behaviour currently under investigation)
+* next_event_a[i to j] operator

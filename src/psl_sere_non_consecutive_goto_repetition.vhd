@@ -46,20 +46,20 @@ begin
   SERE_2_a : assert always {req} |=> {busy[->5]; done};
 
   -- Non consecutive repetition of 3 cycles without padding
-  -- busy has to hold on 3 cycles between req & and the first done
-  -- This is a more exact version of the assertions before using the
-  -- within SERE operator (busy[*3] has to hold during done don't holds)
+  -- busy has to hold on exactly 3 cycles between req & and the first done
+  -- This is a more exact version of the assertions before using
+  -- the length-matching and SERE operator &&
   -- This assertion holds
-  SERE_3_a : assert always {req} |=> {{{busy[->3]} within {not done[+]}}; done};
+  SERE_3_a : assert always {req} |=> {{{busy[->3]} && {not done[+]}}; done};
 
   -- Non consecutive repetition of 4 cycles without padding
-  -- busy has to hold on 4 cycles between req & and the first done
+  -- busy has to hold on exactly 4 cycles between req & and the first done
   -- This assertion doesn't hold at cycle 7
-  SERE_4_a : assert always {req} |=> {{{busy[->4]} within {not done[+]}}; done};
+  SERE_4_a : assert always {req} |=> {{{busy[->4]} && {not done[+]}}; done};
 
-  -- At least one occurance of busy directly in the cycle before done holds
+  -- Equivalent to SERE_3_a
   -- This assertion holds
-  SERE_5_a : assert always {req} |=> {{{busy[->]} within {not done[+]}}; done};
+  SERE_5_a : assert always {req} |=> {{{busy[=2]; busy[->]} && {not done[+]}}; done};
 
 
 end architecture psl;
