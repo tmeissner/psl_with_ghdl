@@ -1,0 +1,18 @@
+[tasks]
+bmc
+
+[options]
+depth 25
+bmc: mode cover
+
+[engines]
+bmc: smtbmc z3
+
+[script]
+bmc: ghdl --std=08 pkg.vhd sequencer.vhd psl_cover.vhd -e psl_cover
+prep -top psl_cover
+
+[files]
+../src/pkg.vhd
+../src/sequencer.vhd
+../src/psl_cover.vhd
