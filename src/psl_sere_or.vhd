@@ -14,6 +14,7 @@ end entity psl_sere_or;
 architecture psl of psl_sere_or is
 
   signal req2, req4, busy, valid, done : std_logic;
+  signal req, wen, ren, ends           : std_logic;
 
 begin
 
@@ -25,22 +26,36 @@ begin
   SEQ_VALID : sequencer generic map ("___-_-____-_-_-_-__") port map (clk, valid);
   SEQ_DONE  : sequencer generic map ("______-__________-_") port map (clk, done);
 
+  --                                 0123456789012345678
+  SEQ_REQ  : sequencer generic map ("_-_______-__________") port map (clk, req);
+  SEQ_WEN  : sequencer generic map ("___-_-_____-_-_-_-__") port map (clk, wen);
+  SEQ_ENDS : sequencer generic map ("_______-__________-_") port map (clk, ends);
+
 
   -- All is sensitive to rising edge of clk
   default clock is rising_edge(clk);
 
+  -- Transfer started by req2 with 2 valids has to be finished by done
   -- This assertion holds
   SERE_0_a : assert always {req2 ; {valid[->2]} && {busy and not done}[+]} |=> {not busy and done};
 
+  -- Transfer started by req4 with 4 valids has to be finished by done
   -- This assertion holds
   SERE_1_a : assert always {req4 ; {valid[->4]} && {busy and not done}[+]} |=> {not busy and done};
 
-  -- SERE or operato
+  -- SERE or operator
   -- Combination of both assertions above
   -- This assertion holds
-  SERE_2_a : assert always {{req2 ; {valid[->2]} && {busy and not done}[+]} |
-                            {req4 ; {valid[->4]} && {busy and not done}[+]}} |=>
+  SERE_2_a : assert always {{req2; {valid[->2]} && {busy and not done}[+]} |
+                            {req4; {valid[->4]} && {busy and not done}[+]}} |=>
                             {not busy and done};
+
+  -- SERE or operator
+  -- Transfer started by req has to have 2 or 4 cycles write cycles, finished by ends
+  -- This assertion holds
+  SERE_3_a : assert always {req} |=>
+                           {{{wen[=2]} && {not ends[+]}} |
+                            {{wen[=4]} && {not ends[+]}}; ends};
 
 
 end architecture psl;
