@@ -30,7 +30,7 @@ begin
 
   -- Occurrance of a SERE during another SERE
   -- valid has to hold 3 times during busy holds and done does't hold
-  -- This assertion doesn't hold at cycle 3
+  -- This assertion holds
   SERE_0_a : assert always {req} |=> {{valid[=3]} within {(busy and not done)[+]}; not busy and done};
 
 

@@ -52,6 +52,7 @@ The next lists will grow during further development
 * Non consecutive repetition operator ([=n], [=i to j])
 * Non consecutive goto repetition operator ([->], [->n], [->i to j])
 * Length-matching and operator (&&)
+* or operator (|)
 * within operator
 
 ## Not yet supported by GHDL:
