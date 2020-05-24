@@ -1,0 +1,18 @@
+[tasks]
+bmc
+
+[options]
+depth 25
+bmc: mode bmc
+
+[engines]
+bmc: smtbmc z3
+
+[script]
+bmc: ghdl --std=08 pkg.vhd sequencer.vhd psl_sere_len_matching_and.vhd -e psl_sere_len_matching_and
+prep -top psl_sere_len_matching_and
+
+[files]
+../src/pkg.vhd
+../src/sequencer.vhd
+../src/psl_sere_len_matching_and.vhd

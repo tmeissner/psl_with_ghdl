@@ -14,7 +14,7 @@ end entity psl_sere_or;
 architecture psl of psl_sere_or is
 
   signal req2, req4, busy, valid, done : std_logic;
-  signal req, wen, ren, ends           : std_logic;
+  signal req, wen, ends                : std_logic;
 
 begin
 
