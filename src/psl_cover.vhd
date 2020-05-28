@@ -62,13 +62,25 @@ begin
   COVER_LENGTH_7_c : cover {req; {{busy[=7]} && {not done[+]}}; done};
   COVER_LENGTH_8_c : cover {req; {{busy[=8]} && {not done[+]}}; done};
 
-  -- BTW: GHDL creates a cover directive for each assert directive
+  -- BTW: GHDL synthesis creates a cover directive for each assert directive
   -- which is really nice. So you can run SymbiYosys in cover mode
   -- to see if your assertions can actually be active.
   -- This assertion checks for the final done at the end of transfer.
   -- In cover mode, the LHS side of the property has to hold.
   -- This cover directive holds at cycle 7
-  ASSERT_a : assert always {req; (busy and not done)[=3]; not done} |=> {done};
+  ASSERT_a : assert always {req; {{busy[=3]} && {not done[+]}}; not done} |=> {done};
+
+  -- For simulation, you have to write a separate cover directive when
+  -- you want to check if your assertion can be active
+  -- Simply use the LHS of the asserts property
+  COVER_A : cover {req; {{busy[=3]} && {not done[+]}}; not done}
+    report "Transfer of length 3";
+
+  -- Stop simulation after longest running sequencer is finished
+  -- Simulation only code by using pragmas
+  -- synthesis translate_off
+  stop_sim(clk, 10);
+  -- synthesis translate_on
 
 
 end architecture psl;

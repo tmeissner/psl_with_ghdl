@@ -49,5 +49,11 @@ begin
     NEXT_EVENT_a : assert always ((a and b = i_slv) -> next_event_a(c)[1 to 4](b = i_slv));
   end generate check_b;
 
+  -- Stop simulation after longest running sequencer is finished
+  -- Simulation only code by using pragmas
+  -- synthesis translate_off
+  stop_sim(clk, 24);
+  -- synthesis translate_on
+
 
 end architecture psl;

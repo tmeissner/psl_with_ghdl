@@ -1,6 +1,8 @@
 library ieee;
   use ieee.std_logic_1164.all;
 
+use std.env.all;
+
 
 package pkg is
 
@@ -27,6 +29,10 @@ package pkg is
 
   function to_bit (a : in character) return std_logic;
   function to_hex (a : in character) return std_logic_vector;
+
+  -- synthesis translate_off
+  procedure stop_sim (signal clk : in std_logic; cycles : in natural; add_cycles : in natural := 2);
+  -- synthesis translate_on
 
 
 end package pkg;
@@ -70,6 +76,21 @@ package body pkg is
     end case;
     return ret;
   end function to_hex;
+
+  -- synthesis translate_off
+  procedure stop_sim (signal clk : in std_logic; cycles : in natural; add_cycles : in natural := 2) is
+    variable index : natural := cycles + 5;
+  begin
+    loop
+      wait until rising_edge(clk);
+      index := index - 1;
+      if index = 0 then
+        exit;
+      end if;
+    end loop;
+    stop(0);
+  end procedure stop_sim;
+  -- synthesis translate_on
 
 
 end package body pkg;

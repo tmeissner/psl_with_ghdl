@@ -26,7 +26,7 @@ begin
   SEQ_VALID : sequencer generic map ("___-_-____-_-_-_-__") port map (clk, valid);
   SEQ_DONE  : sequencer generic map ("______-__________-_") port map (clk, done);
 
-  --                                 0123456789012345678
+  --                                 01234567890123456789
   SEQ_REQ  : sequencer generic map ("_-_______-__________") port map (clk, req);
   SEQ_WEN  : sequencer generic map ("___-_-_____-_-_-_-__") port map (clk, wen);
   SEQ_ENDS : sequencer generic map ("_______-__________-_") port map (clk, ends);
@@ -56,6 +56,12 @@ begin
   SERE_3_a : assert always {req} |=>
                            {{{wen[=2]} && {not ends[+]}} |
                             {{wen[=4]} && {not ends[+]}}; ends};
+
+  -- Stop simulation after longest running sequencer is finished
+  -- Simulation only code by using pragmas
+  -- synthesis translate_off
+  stop_sim(clk, 20);
+  -- synthesis translate_on
 
 
 end architecture psl;

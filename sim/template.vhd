@@ -14,7 +14,7 @@ architecture sim of tb___DUT__ is
 begin
 
 
-  clk <= not clk after 1 ns;
+  clk <= not clk after 500 ps;
 
   cycle <= cycle + 1 when rising_edge(clk);
 

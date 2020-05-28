@@ -14,7 +14,7 @@ all: ${psl_tests}
 	ghdl -a --std=$(VHD_STD) --workdir=work/$@ ../src/$@.vhd
 	ghdl -a --std=$(VHD_STD) --workdir=work/$@ work/$@/testbench.vhd
 	ghdl -e --std=$(VHD_STD) --workdir=work/$@ -o work/$@/tb_$@ tb_$@
-	cd work/$@; ghdl -r --std=$(VHD_STD) tb_$@ --wave=$@.ghw --psl-report=$@_psl_coverage.json --stop-time=50ns
+	cd work/$@; ghdl -r --std=$(VHD_STD) tb_$@ --wave=$@.ghw --psl-report=$@_psl_coverage.json
 
 work/%/testbench.vhd: template.vhd
 	mkdir -p work; mkdir -p $(dir $@)

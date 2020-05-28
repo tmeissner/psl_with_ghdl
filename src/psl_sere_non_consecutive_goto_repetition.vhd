@@ -18,7 +18,7 @@ architecture psl of psl_sere_non_consecutive_goto_repetition is
 begin
 
 
-  --                                 0123456789
+  --                                 012345678
   SEQ_REQ  : sequencer generic map ("_-_______") port map (clk, req);
   SEQ_BUSY : sequencer generic map ("__-_-_-__") port map (clk, busy);
   SEQ_DONE : sequencer generic map ("_______-_") port map (clk, done);
@@ -60,6 +60,12 @@ begin
   -- Equivalent to SERE_3_a
   -- This assertion holds
   SERE_5_a : assert always {req} |=> {{{busy[=2]; busy[->]} && {not done[+]}}; done};
+
+  -- Stop simulation after longest running sequencer is finished
+  -- Simulation only code by using pragmas
+  -- synthesis translate_off
+  stop_sim(clk, 9);
+  -- synthesis translate_on
 
 
 end architecture psl;

@@ -40,5 +40,11 @@ begin
   -- This assertion doesn't hold at cycle 2
   WITH_ALWAYS_a : assert always a;
 
+  -- Stop simulation after longest running sequencer is finished
+  -- Simulation only code by using pragmas
+  -- synthesis translate_off
+  stop_sim(clk, 6);
+  -- synthesis translate_on
+
 
 end architecture psl;

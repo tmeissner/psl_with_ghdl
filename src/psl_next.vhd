@@ -37,5 +37,11 @@ begin
   -- This assertion doesn't hold at cycle 6
   NEXT_1_a : assert always (c -> next d);
 
+  -- Stop simulation after longest running sequencer is finished
+  -- Simulation only code by using pragmas
+  -- synthesis translate_off
+  stop_sim(clk, 12);
+  -- synthesis translate_on
+
 
 end architecture psl;

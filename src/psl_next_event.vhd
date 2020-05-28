@@ -44,5 +44,11 @@ begin
   -- This assertion doesn't hold at cycle 9
   NEXT_EVENT_3_a : assert always (d -> next next_event(e)(f));
 
+  -- Stop simulation after longest running sequencer is finished
+  -- Simulation only code by using pragmas
+  -- synthesis translate_off
+  stop_sim(clk, 15);
+  -- synthesis translate_on
+
 
 end architecture psl;

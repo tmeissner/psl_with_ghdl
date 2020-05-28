@@ -36,5 +36,11 @@ begin
   -- This assertion doesn't hold at cycle 2
   NEVER_1_a : assert never b;
 
+  -- Stop simulation after longest running sequencer is finished
+  -- Simulation only code by using pragmas
+  -- synthesis translate_off
+  stop_sim(clk, 4);
+  -- synthesis translate_on
+
 
 end architecture psl;

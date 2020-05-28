@@ -35,5 +35,11 @@ begin
   -- This assertion holds
   SERE_2_a : assert always {not a; a} |-> next {b};
 
+  -- Stop simulation after longest running sequencer is finished
+  -- Simulation only code by using pragmas
+  -- synthesis translate_off
+  stop_sim(clk, 9);
+  -- synthesis translate_on
+
 
 end architecture psl;

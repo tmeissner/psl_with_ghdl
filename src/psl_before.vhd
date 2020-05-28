@@ -72,5 +72,10 @@ begin
   -- This assertion holds
   BEFORE_9_a : assert always (e -> (f or next (f before e)));
 
+  -- Stop simulation after longest running sequencer is finished
+  -- Simulation only code by using pragmas
+  -- synthesis translate_off
+  stop_sim(clk, 11);
+  -- synthesis translate_on
 
 end architecture psl;

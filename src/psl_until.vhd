@@ -57,5 +57,11 @@ begin
   -- This assertion doesn't hold at cycle 2
   UNTIL_5_a : assert always (g -> next (h until_ i));
 
+  -- Stop simulation after longest running sequencer is finished
+  -- Simulation only code by using pragmas
+  -- synthesis translate_off
+  stop_sim(clk, 11);
+  -- synthesis translate_on
+
 
 end architecture psl;

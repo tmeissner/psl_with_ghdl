@@ -33,5 +33,11 @@ begin
   -- This assertion holds
   SERE_0_a : assert always {req} |=> {{valid[=3]} within {(busy and not done)[+]}; not busy and done};
 
+  -- Stop simulation after longest running sequencer is finished
+  -- Simulation only code by using pragmas
+  -- synthesis translate_off
+  stop_sim(clk, 10);
+  -- synthesis translate_on
+
 
 end architecture psl;

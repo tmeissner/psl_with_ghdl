@@ -30,5 +30,11 @@ begin
   -- This assertion holds
   NEXT_EVENT_0_a : assert always (a -> next_event(b)[4](c));
 
+  -- Stop simulation after longest running sequencer is finished
+  -- Simulation only code by using pragmas
+  -- synthesis translate_off
+  stop_sim(clk, 16);
+  -- synthesis translate_on
+
 
 end architecture psl;

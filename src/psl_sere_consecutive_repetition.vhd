@@ -30,7 +30,7 @@ begin
   SEQ_E : sequencer generic map ("______") port map (clk, e);
   SEQ_F : sequencer generic map ("__-___") port map (clk, f);
 
-  --                              012345678
+  --                              0123456789
   SEQ_G : sequencer generic map ("_-________") port map (clk, g);
   SEQ_H : sequencer generic map ("__-_-_-___") port map (clk, h);
   SEQ_I : sequencer generic map ("________-_") port map (clk, i);
@@ -104,6 +104,12 @@ begin
   -- All repetition operators can also be used with SERE
   -- This assertion holds
   SERE_13_a : assert always {g} |=> {{h; not h}[*3]; i};
+
+  -- Stop simulation after longest running sequencer is finished
+  -- Simulation only code by using pragmas
+  -- synthesis translate_off
+  stop_sim(clk, 10);
+  -- synthesis translate_on
 
 
 end architecture psl;

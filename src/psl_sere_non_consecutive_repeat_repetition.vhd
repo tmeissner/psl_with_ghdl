@@ -57,5 +57,11 @@ begin
   -- This assertion doesn't hold at cycle 8
   SERE_4_a : assert always {req} |=> {{{busy[=4]} && {not done[+]}}; done};
 
+  -- Stop simulation after longest running sequencer is finished
+  -- Simulation only code by using pragmas
+  -- synthesis translate_off
+  stop_sim(clk, 10);
+  -- synthesis translate_on
+
 
 end architecture psl;

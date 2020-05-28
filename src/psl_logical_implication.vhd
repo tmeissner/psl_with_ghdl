@@ -18,7 +18,7 @@ architecture psl of psl_logical_implication is
 begin
 
 
-  --                              012345
+  --                              01234567890
   SEQ_A : sequencer generic map ("_-__-___-__") port map (clk, a);
   SEQ_B : sequencer generic map ("_-______-__") port map (clk, b);
   SEQ_C : sequencer generic map ("_-__-______") port map (clk, c);
@@ -44,5 +44,10 @@ begin
   -- This assertion holds because LHS of implication never holds
   IMPLICATION_4_a : assert always (d -> (a and b and c));
 
+  -- Stop simulation after longest running sequencer is finished
+  -- Simulation only code by using pragmas
+  -- synthesis translate_off
+  stop_sim(clk, 11);
+  -- synthesis translate_on
 
 end architecture psl;

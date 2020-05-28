@@ -69,5 +69,11 @@ begin
   -- This assertion holds
   NEXT_5_a : assert always (k -> next_e[3 to 5] (l));
 
+  -- Stop simulation after longest running sequencer is finished
+  -- Simulation only code by using pragmas
+  -- synthesis translate_off
+  stop_sim(clk, 12);
+  -- synthesis translate_on
+
 
 end architecture psl;
