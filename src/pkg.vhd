@@ -79,7 +79,7 @@ package body pkg is
 
   -- synthesis translate_off
   procedure stop_sim (signal clk : in std_logic; cycles : in natural; add_cycles : in natural := 2) is
-    variable index : natural := cycles + 5;
+    variable index : natural := cycles + add_cycles;
   begin
     loop
       wait until rising_edge(clk);
@@ -88,7 +88,7 @@ package body pkg is
         exit;
       end if;
     end loop;
-    stop(0);
+    finish(0);
   end procedure stop_sim;
   -- synthesis translate_on
 
