@@ -12,6 +12,7 @@ psl_next_event_e \
 psl_next_event_a \
 psl_until \
 psl_before \
+psl_eventually \
 psl_sere \
 psl_sere_overlapping_suffix_impl \
 psl_sere_non_overlapping_suffix_impl \

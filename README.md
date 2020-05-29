@@ -40,8 +40,8 @@ The next lists will grow during further development
 * next_event_e[i to j] operator
 * until operator
 * until_ operator
-* before operator (GHDL crash with a specific property, see psl_before.vhd)
-* eventually! operator (simulation, synthesis produces a GHDL crash, see [GHDL issue 1345](https://github.com/ghdl/ghdl/issues/1345))
+* before operator (GHDL crash with a specific invalid property, see [PSL before example](https://github.com/tmeissner/psl_with_ghdl/blob/master/src/psl_before.vhd#L53))
+* eventually! operator
 
 ### Sequential Extended Regular Expressions (SERE style)
 
@@ -64,6 +64,7 @@ The next lists will grow during further development
 
 * before_ operator (Seems that LHS & RHS of operator have to be active at same cycle, see psl_before.vhd)
 * next_event_a[i to j] operator
+* eventually! behaviour with (un)bounded proofs, see [GHDL issue 1345](https://github.com/ghdl/ghdl/issues/1345)
 
 ## Further Ressources
 
