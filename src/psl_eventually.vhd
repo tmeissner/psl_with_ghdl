@@ -28,7 +28,7 @@ begin
 
   -- This assertion holds
   -- This assertion leads to a GHDL synthesis crash with bug report
-  --EVENTUALLY_a : assert always (a -> eventually! b);
+  EVENTUALLY_a : assert always (a -> eventually! b);
 
   -- Stop simulation after longest running sequencer is finished
   -- Simulation only code by using pragmas

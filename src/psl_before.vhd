@@ -78,4 +78,5 @@ begin
   stop_sim(clk, 11);
   -- synthesis translate_on
 
+
 end architecture psl;
