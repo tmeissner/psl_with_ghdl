@@ -1,4 +1,4 @@
-[![tests](https://github.com/tmeissner/psl_with_ghdl/workflows/tests/badge.svg?branch=master)](https://github.com/tmeissner/psl_with_ghdl/actions?query=workflow%3Atests)
+[![simulation](https://github.com/tmeissner/psl_with_ghdl/workflows/simulation/badge.svg)](https://github.com/tmeissner/psl_with_ghdl/actions?query=workflow%3Asimulation) [![formal](https://github.com/tmeissner/psl_with_ghdl/workflows/formal/badge.svg)](https://github.com/tmeissner/psl_with_ghdl/actions?query=workflow%3Aformal)
 
 # psl_with_ghdl
 
@@ -41,7 +41,7 @@ The next lists will grow during further development
 * until operator
 * until_ operator
 * before operator (GHDL crash with a specific property, see psl_before.vhd)
-* eventually! operator (simulation, synthesis produces a GHDL crash, see psl_eventually.vhd)
+* eventually! operator (simulation, synthesis produces a GHDL crash, see [GHDL issue 1345](https://github.com/ghdl/ghdl/issues/1345))
 
 ### Sequential Extended Regular Expressions (SERE style)
 
