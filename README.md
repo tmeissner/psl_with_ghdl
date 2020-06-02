@@ -46,6 +46,7 @@ The next lists will grow during further development
 ### Sequential Extended Regular Expressions (SERE style)
 
 * Simple SERE
+* Fusion operator (`:`)
 * Overlapping suffix implication operator (`|->`)
 * Non overlapping suffix implication operator (`|=>`)
 * Consecutive repetition operator (`[*]`, `[+]`, `[*n]`, `[*i to j]`)
