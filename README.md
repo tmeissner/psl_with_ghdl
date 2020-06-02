@@ -52,6 +52,7 @@ The next lists will grow during further development
 * Non consecutive repetition operator (`[=n]`, `[=i to j]`)
 * Non consecutive goto repetition operator (`[->]`, `[->n]`, `[->i to j]`)
 * Length-matching and operator (`&&`)
+* Non-length-matching and operator (`&`)
 * or operator (`|`)
 * `within` operator
 
@@ -63,7 +64,7 @@ The next lists will grow during further development
 
 * `forall` statement
 * Synthesis of strong operator versions
-* PSL functions (`prev()` partially implemented)
+* PSL functions (`prev()` implemented)
 
 ## Under investigation
 

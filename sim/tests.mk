@@ -22,4 +22,5 @@ psl_sere_non_consecutive_goto_repetition \
 psl_cover \
 psl_sere_within \
 psl_sere_or \
-psl_sere_len_matching_and
+psl_sere_len_matching_and \
+psl_sere_non_len_matching_and
