@@ -20,10 +20,10 @@ architecture psl of psl_prev is
 begin
 
 
-  --                                  0123456789012
-  SEQ_VALID : sequencer generic map ("_-_-_-_-_-_-_") port map (clk, valid);
-  SEQ_A     : sequencer generic map ("__--__--__--_") port map (clk, a);
-  SEQ_D : hex_sequencer generic map ("0011223344556") port map (clk, d);
+  --                                  01234567890123
+  SEQ_VALID : sequencer generic map ("____-_-_-_-_-_") port map (clk, valid);
+  SEQ_A     : sequencer generic map ("-__--__--__--_") port map (clk, a);
+  SEQ_D : hex_sequencer generic map ("00011223344556") port map (clk, d);
 
 
   -- All is sensitive to rising edge of clk
@@ -34,13 +34,13 @@ begin
 
   -- This assertion should hold
   -- prev() with vector parameter isn't supported yet
-  -- Workaround: VHDL glue logic
+  -- Workaround: VHDL glue logic and simple compare
   --  PREV_1_a : assert always (valid -> d = prev(d));
 
   -- Workaround with VHDL glue logic generating the
-  -- previous value of d
+  -- previous value of d and simple comparing the two values
   d_reg : block is
-    signal d_prev : std_logic_vector(3 downto 0);
+    signal d_prev : std_logic_vector(d'range);
   begin
     process (clk) is
     begin
@@ -48,15 +48,24 @@ begin
         d_prev <= d;
       end if;
     end process;
-
     PREV_2_a : assert always (valid -> d = d_prev);
-
   end block d_reg;
+
+  -- Using prev() with additional parameter i, should return
+  -- the value of the expression in the i-th previous cycle
+  -- prev(a) = prev(a, 1)
+  -- This assertion holds
+  PREV_3_a : assert always (valid -> a = prev(a, 1));
+
+  -- Using prev() with additional parameter i, should return
+  -- the value of the expression in the i-th previous cycle
+  -- This assertion holds
+  PREV_4_a : assert always (valid -> a = prev(a, 4));
 
   -- Stop simulation after longest running sequencer is finished
   -- Simulation only code by using pragmas
   -- synthesis translate_off
-  stop_sim(clk, 13);
+  stop_sim(clk, 14);
   -- synthesis translate_on
 
 

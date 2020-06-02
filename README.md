@@ -21,54 +21,55 @@ The next lists will grow during further development
 
 ### Directives
 
-* assert directive
-* cover directive
-* assume directive (synthesis)
-* restrict directive (synthesis)
+* `assert` directive
+* `cover` directive
+* `assume` directive (synthesis)
+* `restrict` directive (synthesis)
 
 ### Temporal operators (LTL style)
 
-* always operator
-* never operator
-* logical implication operator (->)
-* next operator
-* next[n] operator
-* next_a[i to j] operator
-* next_e[i to j] operator
-* next_event operator
-* next_event[n] operator
-* next_event_e[i to j] operator
-* until operator
-* until_ operator
-* before operator (GHDL crash with a specific invalid property, see [PSL before example](https://github.com/tmeissner/psl_with_ghdl/blob/master/src/psl_before.vhd#L53))
-* eventually! operator
+* `always` operator
+* `never` operator
+* logical implication operator (`->`)
+* `next` operator
+* `next[n]` operator
+* `next_a[i to j]` operator
+* `next_e[i to j]` operator
+* `next_event` operator
+* `next_event[n]` operator
+* `next_event_e[i to j]` operator
+* `until` operator
+* `until_` operator
+* `before` operator (GHDL crash with a specific invalid property, see [PSL before example](https://github.com/tmeissner/psl_with_ghdl/blob/master/src/psl_before.vhd#L53))
+* `eventually!` operator
 
 ### Sequential Extended Regular Expressions (SERE style)
 
 * Simple SERE
-* Overlapping suffix implication operator (|->)
-* Non overlapping suffix implication operator (|=>)
-* Consecutive repetition operator ([*], [+], [*n], [*i to j])
-* Non consecutive repetition operator ([=n], [=i to j])
-* Non consecutive goto repetition operator ([->], [->n], [->i to j])
-* Length-matching and operator (&&)
-* or operator (|)
-* within operator
+* Overlapping suffix implication operator (`|->`)
+* Non overlapping suffix implication operator (`|=>`)
+* Consecutive repetition operator (`[*]`, `[+]`, `[*n]`, `[*i to j]`)
+* Non consecutive repetition operator (`[=n]`, `[=i to j]`)
+* Non consecutive goto repetition operator (`[->]`, `[->n]`, `[->i to j]`)
+* Length-matching and operator (`&&`)
+* or operator (`|`)
+* `within` operator
 
 ### Functions
 
-* prev() (Synthesis & boolean parameter only, see [prev() example](https://github.com/tmeissner/psl_with_ghdl/blob/master/src/psl_prev.vhd))
+* `prev()` function (Synthesis & boolean parameter only, see [prev() example](https://github.com/tmeissner/psl_with_ghdl/blob/master/src/psl_prev.vhd))
 
 ## Not yet supported by GHDL:
 
-* forall statement
+* `forall` statement
 * Synthesis of strong operator versions
+* PSL functions (`prev()` partially implemented)
 
 ## Under investigation
 
-* before_ operator (Seems that LHS & RHS of operator have to be active at same cycle, see psl_before.vhd)
-* next_event_a[i to j] operator
-* eventually! behaviour with (un)bounded proofs, see [GHDL issue 1345](https://github.com/ghdl/ghdl/issues/1345)
+* `before_` operator (Seems that LHS & RHS of operator have to be active at same cycle, see psl_before.vhd)
+* `next_event_a[i to j]` operator
+* `eventually!` behaviour with liveness proofs, see [GHDL issue 1345](https://github.com/ghdl/ghdl/issues/1345)
 
 ## Further Ressources
 
