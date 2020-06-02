@@ -55,6 +55,10 @@ The next lists will grow during further development
 * or operator (|)
 * within operator
 
+### Functions
+
+* prev() (Synthesis & boolean parameter only, see [prev() example](https://github.com/tmeissner/psl_with_ghdl/blob/master/src/psl_prev.vhd))
+
 ## Not yet supported by GHDL:
 
 * forall statement
