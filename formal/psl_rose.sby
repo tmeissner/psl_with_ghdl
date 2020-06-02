@@ -1,0 +1,18 @@
+[tasks]
+bmc
+
+[options]
+depth 25
+bmc: mode bmc
+
+[engines]
+bmc: smtbmc z3
+
+[script]
+bmc: ghdl --std=08 pkg.vhd sequencer.vhd psl_rose.vhd -e psl_rose
+prep -top psl_rose
+
+[files]
+../src/pkg.vhd
+../src/sequencer.vhd
+../src/psl_rose.vhd
