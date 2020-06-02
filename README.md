@@ -57,7 +57,7 @@ The next lists will grow during further development
 
 ### Functions
 
-* `prev()` function (Synthesis & boolean parameter only, see [prev() example](https://github.com/tmeissner/psl_with_ghdl/blob/master/src/psl_prev.vhd))
+* `prev()` function (Synthesis only, see [prev() example](https://github.com/tmeissner/psl_with_ghdl/blob/master/src/psl_prev.vhd))
 
 ## Not yet supported by GHDL:
 
