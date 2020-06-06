@@ -29,6 +29,12 @@ begin
   -- This assertion holds
   ROSE_0_a : assert always (rose(a) -> b);
 
+  -- This assertion holds
+  ROSE_1_a : assert always {not a; a} |-> rose(a);
+
+  -- This assertion holds
+  ROSE_2_a : assert always (rose(a) -> (not prev(a) and a));
+
   -- Workaround needed before rose() is implemented
   -- With VHDL glue logic generating the
   -- previous value of a and simple comparing the two values
@@ -41,11 +47,11 @@ begin
         a_prev <= a;
       end if;
     end process;
-    ROSE_1_a : assert always (a and not a_prev -> b);
+    ROSE_3_a : assert always (a and not a_prev -> b);
   end block d_reg;
 
   -- Another workaround by using simple SERE concatenation on LHS
-  FELL_2_a : assert always {not a; a} |-> b;
+  ROSE_4_a : assert always {not a; a} |-> b;
 
   -- Stop simulation after longest running sequencer is finished
   -- Simulation only code by using pragmas
