@@ -30,12 +30,12 @@ begin
   default clock is rising_edge(clk);
 
   -- This assertion holds
-  STABLE_0_a : assert always {not valid; valid} -> next (stable(a) until_ ack);
+  STABLE_0_a : assert always {not valid; valid} |=> (stable(a) until_ ack);
 
   -- This assertion holds
-  STABLE_1_a : assert always {not valid; valid} -> next (stable(b) until_ ack);
+  STABLE_1_a : assert always {not valid; valid} |=> (stable(b) until_ ack);
 
-  -- Workaround needed before stable() is implemented
+  -- Workaround needed before stable() was implemented
   -- With VHDL glue logic generating the
   -- previous value of a and simple comparing the two values
   a_reg : block is
