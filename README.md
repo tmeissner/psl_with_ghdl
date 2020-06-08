@@ -63,12 +63,13 @@ The next lists will grow during further development
 * `prev()` function (Synthesis only, see [prev() example](https://github.com/tmeissner/psl_with_ghdl/blob/master/src/psl_prev.vhd))
 * `stable()` function (Synthesis only, see [stable() example](https://github.com/tmeissner/psl_with_ghdl/blob/master/src/psl_stable.vhd))
 * `rose()` function (Synthesis only, see [rose() example](https://github.com/tmeissner/psl_with_ghdl/blob/master/src/psl_rose.vhd))
+* `fell()` function (Synthesis only, see [fell() example](https://github.com/tmeissner/psl_with_ghdl/blob/master/src/psl_fell.vhd))
 
 ## Not yet supported by GHDL:
 
 * `forall` statement
 * Synthesis of strong operator versions
-* PSL functions (`prev()`, `stable()` & `rose()` are implemented for synthesis)
+* PSL functions (`prev()`, `stable()`,`rose()` & `fell()` are implemented for synthesis)
 
 ## Under investigation
 

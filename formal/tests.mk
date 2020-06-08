@@ -28,4 +28,5 @@ psl_sere_concat \
 psl_sere_fusion \
 psl_prev \
 psl_stable \
-psl_rose
+psl_rose \
+psl_fell
