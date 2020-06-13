@@ -83,9 +83,16 @@ architecture psl of issue is
   end component hex_sequencer;
 
   signal a, b : std_logic_vector(3 downto 0);
+  signal prev_valid : boolean := false;
 
 begin
 
+
+  process is
+  begin
+    wait until rising_edge(clk);
+    prev_valid <= true;
+  end process;
 
   --                                  0123456789
   SEQ_A : hex_sequencer generic map ("4444444444") port map (clk, a);
@@ -96,24 +103,36 @@ begin
   default clock is rising_edge(clk);
 
   -- Holds
-  STABLE_0 : assert always stable(a);
+  STABLE_0 : assert always prev_valid -> stable(a);
 
   -- Doesn't hold at cycle 4
-  STABLE_1 : assert always stable(b);
+  STABLE_1 : assert always prev_valid -> stable(b);
 
   -- Triggers GHDL bug
-  STABLE_2 : assert always stable(a(1 downto 0));
-  STABLE_3 : assert always stable(b(1 downto 0));
+  -- EDIT: works since fix of ghdl issue #1367
+  -- Holds
+  STABLE_2 : assert always prev_valid -> stable(a(1 downto 0));
+
+  -- Triggers GHDL bug
+  -- EDIT: works since fix of ghdl issue #1367
+  -- Doesn't hold at cycle 4
+  STABLE_3 : assert always prev_valid -> stable(b(1 downto 0));
 
   -- Holds
-  PREV_0 : assert always a = prev(a);
+  PREV_0 : assert always prev_valid -> a = prev(a);
 
   -- Doesn't hold at cycle 4
-  PREV_1 : assert always b = prev(b);
+  PREV_1 : assert always prev_valid -> b = prev(b);
 
   -- Triggers GHDL bug
-  PREV_2 : assert always always a(1 downto 0) = prev(a(1 downto 0));
-  PREV_3 : assert always always b(1 downto 0) = prev(b(1 downto 0));
+  -- EDIT: works since fix of ghdl issue #1367
+  -- Holds
+  PREV_2 : assert always always prev_valid -> a(1 downto 0) = prev(a(1 downto 0));
+
+  -- Triggers GHDL bug
+  -- EDIT: works since fix of ghdl issue #1367
+  -- Doesn't hold at cycle 4
+  PREV_3 : assert always always prev_valid -> b(1 downto 0) = prev(b(1 downto 0));
 
 
 end architecture psl;

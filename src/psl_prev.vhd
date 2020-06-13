@@ -76,6 +76,10 @@ begin
   -- This assertion holds
   PREV_6_a : assert always ((cnt /= x"F") -> next (unsigned(cnt) = unsigned(prev(cnt)) + 1));
 
+  -- Check parts of a vector
+  -- This assertion should hold
+  PREV_7_a : assert always (valid -> di(1 downto 0) = prev(di(1 downto 0)));
+
   -- Stop simulation after longest running sequencer is finished
   -- Simulation only code by using pragmas
   -- synthesis translate_off

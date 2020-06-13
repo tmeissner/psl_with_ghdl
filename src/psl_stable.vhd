@@ -33,7 +33,7 @@ begin
   STABLE_0_a : assert always {not valid; valid} |=> (stable(a) until_ ack);
 
   -- This assertion holds
-  STABLE_1_a : assert always {not valid; valid} |=> (stable(b) until_ ack);
+  STABLE_1_a : assert always rose(valid) -> next (stable(b) until_ ack);
 
   -- Workaround needed before stable() was implemented
   -- With VHDL glue logic generating the
@@ -52,6 +52,10 @@ begin
     STABLE_2_a : assert always {not valid; valid} |=> (a = a_prev until_ ack);
     STABLE_3_a : assert always {not valid; valid} |=> (b = b_prev until_ ack);
   end block a_reg;
+
+  -- Check parts of a vector
+  -- This assertion holds
+  STABLE_4_a : assert always rose(valid) -> next (stable(b(1 downto 0)) until_ ack);
 
 
   -- Stop simulation after longest running sequencer is finished
