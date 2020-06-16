@@ -1,0 +1,18 @@
+[tasks]
+bmc
+
+[options]
+depth 25
+bmc: mode bmc
+
+[engines]
+bmc: smtbmc z3
+
+[script]
+bmc: ghdl --std=08 pkg.vhd sequencer.vhd psl_logical_iff.vhd -e psl_logical_iff
+prep -top psl_logical_iff
+
+[files]
+../src/pkg.vhd
+../src/sequencer.vhd
+../src/psl_logical_iff.vhd

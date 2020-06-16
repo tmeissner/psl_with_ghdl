@@ -31,6 +31,7 @@ The next lists will grow during further development
 * `always` operator
 * `never` operator
 * logical implication operator (`->`)
+* logical iff operator (`<->`)
 * `next` operator
 * `next[n]` operator
 * `next_a[i to j]` operator
