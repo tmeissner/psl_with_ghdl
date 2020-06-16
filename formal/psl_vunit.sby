@@ -1,0 +1,28 @@
+[tasks]
+sere_0 bmc
+sere_1 bmc
+sere_2 bmc
+sere_3 bmc
+all bmc
+bmc all
+
+[options]
+depth 25
+bmc: mode bmc
+
+[engines]
+bmc: smtbmc z3
+
+[script]
+sere_0: ghdl --std=08 -gformal=SERE_0 pkg.vhd sequencer.vhd psl_vunit.vhd psl_vunit.psl -e psl_vunit
+sere_1: ghdl --std=08 -gformal=SERE_1 pkg.vhd sequencer.vhd psl_vunit.vhd psl_vunit.psl -e psl_vunit
+sere_2: ghdl --std=08 -gformal=SERE_2 pkg.vhd sequencer.vhd psl_vunit.vhd psl_vunit.psl -e psl_vunit
+sere_3: ghdl --std=08 -gformal=SERE_3 pkg.vhd sequencer.vhd psl_vunit.vhd psl_vunit.psl -e psl_vunit
+all: ghdl --std=08 -gformal=ALL pkg.vhd sequencer.vhd psl_vunit.vhd psl_vunit.psl -e psl_vunit
+prep -top psl_vunit
+
+[files]
+../src/pkg.vhd
+../src/sequencer.vhd
+../src/psl_vunit.vhd
+../src/psl_vunit.psl

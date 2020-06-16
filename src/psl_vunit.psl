@@ -1,0 +1,28 @@
+vunit psl_vunit_vu (psl_vunit(beh)) {
+
+
+  -- All is sensitive to rising edge of clk
+  default clock is rising_edge(clk);
+
+  gen_0 : if FORMAL = "SERE_0" or formal = "ALL" generate
+    -- This assertion holds
+    SERE_0_a : assert {a};
+  end generate gen_0;
+
+  gen_1 : if FORMAL = "SERE_1" or formal = "ALL" generate
+    -- This assertion holds
+    SERE_1_a : assert {a; a};
+  end generate gen_1;
+
+  gen_2 : if FORMAL = "SERE_2" or formal = "ALL" generate
+    -- This assertion holds
+    SERE_2_a : assert {a; a and b};
+  end generate gen_2;
+
+  gen_3 : if FORMAL = "SERE_3" or formal = "ALL" generate
+    -- This assertion doesn't hold at cycle 2
+    SERE_3_a : assert always {a; a};
+  end generate gen_3;
+
+
+}

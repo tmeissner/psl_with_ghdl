@@ -61,14 +61,14 @@ The next lists will grow during further development
 
 ### Functions
 
-* `prev()` function (Synthesis only, see [prev() example](https://github.com/tmeissner/psl_with_ghdl/blob/master/src/psl_prev.vhd))
-* `stable()` function (Synthesis only, see [stable() example](https://github.com/tmeissner/psl_with_ghdl/blob/master/src/psl_stable.vhd))
-* `rose()` function (Synthesis only, see [rose() example](https://github.com/tmeissner/psl_with_ghdl/blob/master/src/psl_rose.vhd))
-* `fell()` function (Synthesis only, see [fell() example](https://github.com/tmeissner/psl_with_ghdl/blob/master/src/psl_fell.vhd))
+* `prev()` function (Synthesis only)
+* `stable()` function (Synthesis only)
+* `rose()` function (Synthesis only)
+* `fell()` function (Synthesis only)
 
 ### Convenient stuff
 
-* Partial support of PSL vunits in synthesis
+* Partial support of PSL vunits (synthesis)
 
 ## Not yet supported by GHDL:
 

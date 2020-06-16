@@ -30,4 +30,5 @@ psl_prev \
 psl_stable \
 psl_rose \
 psl_fell \
-psl_logical_iff
+psl_logical_iff \
+psl_vunit
