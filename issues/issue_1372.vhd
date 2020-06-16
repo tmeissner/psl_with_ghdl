@@ -31,4 +31,7 @@ architecture psl of issue is
 
 begin
 
+  a <= '1';
+  b <= a;
+
 end architecture psl;

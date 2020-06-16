@@ -65,6 +65,10 @@ The next lists will grow during further development
 * `rose()` function (Synthesis only, see [rose() example](https://github.com/tmeissner/psl_with_ghdl/blob/master/src/psl_rose.vhd))
 * `fell()` function (Synthesis only, see [fell() example](https://github.com/tmeissner/psl_with_ghdl/blob/master/src/psl_fell.vhd))
 
+### Convenient stuff
+
+* Partial support of PSL vunits in synthesis
+
 ## Not yet supported by GHDL:
 
 * `forall` statement
