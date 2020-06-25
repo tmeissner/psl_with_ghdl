@@ -68,7 +68,8 @@ The next lists will grow during further development
 
 ### Convenient stuff
 
-* Partial support of PSL vunits (synthesis)
+* Partial support of PSL vunits (synthesis only)
+* Partial support of named sequences (simulation only)
 
 ## Not yet supported by GHDL:
 
