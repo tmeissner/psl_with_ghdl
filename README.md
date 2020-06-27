@@ -70,6 +70,7 @@ The next lists will grow during further development
 
 * Partial support of PSL vunits (synthesis only)
 * Partial support of named sequences (simulation only)
+* Partial support of named properties (simulation only)
 
 ## Not yet supported by GHDL:
 

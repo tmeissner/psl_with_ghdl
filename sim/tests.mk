@@ -26,4 +26,5 @@ psl_sere_len_matching_and \
 psl_sere_non_len_matching_and \
 psl_sere_concat \
 psl_sere_fusion \
-psl_sequence
+psl_sequence \
+psl_property
