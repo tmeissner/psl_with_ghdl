@@ -71,12 +71,16 @@ The next lists will grow during further development
 * Partial support of PSL vunits (synthesis only)
 * Partial support of named sequences (simulation only)
 * Partial support of named properties (simulation only)
+* Partial support of PSL `endpoint` (simulation only, in PSL comments)
+
 
 ## Not yet supported by GHDL:
 
-* `forall` statement
+* `forall` operator
+* `for` operator
 * Synthesis of strong operator versions
 * PSL functions (`prev()`, `stable()`,`rose()` & `fell()` are implemented for synthesis)
+* PSL macros (`%for`, `%if`)
 
 ## Under investigation
 
