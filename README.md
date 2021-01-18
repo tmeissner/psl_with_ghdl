@@ -74,6 +74,12 @@ The next lists will grow during further development
 * Partial support of PSL `endpoint` (simulation only, in PSL comments)
 
 
+### Yosys formal extensions (reference to [Symbiyosys docs](https://symbiyosys.readthedocs.io/en/latest/verilog.html#unconstrained-variables))
+
+* `anyconst` attribute (synthesis only)
+* `anyseq` attribute (synthesis only)
+
+
 ## Not yet supported by GHDL:
 
 * `forall` operator

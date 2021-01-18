@@ -31,4 +31,6 @@ psl_stable \
 psl_rose \
 psl_fell \
 psl_logical_iff \
-psl_vunit
+psl_vunit \
+yosys_anyconst \
+yosys_anyseq

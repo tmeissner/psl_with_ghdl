@@ -1,0 +1,18 @@
+[tasks]
+bmc
+
+[options]
+depth 25
+bmc: mode bmc
+
+[engines]
+bmc: smtbmc z3
+
+[script]
+bmc: ghdl --std=08 pkg.vhd sequencer.vhd yosys_anyconst.vhd -e yosys_anyconst
+prep -top yosys_anyconst
+
+[files]
+../src/pkg.vhd
+../src/sequencer.vhd
+../src/yosys_anyconst.vhd
