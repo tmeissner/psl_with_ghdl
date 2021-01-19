@@ -11,9 +11,9 @@ all: ${psl_tests}
 
 %: ../src/%.vhd ../src/pkg.vhd ../src/sequencer.vhd ../src/hex_sequencer.vhd work/%/testbench.vhd
 	ghdl -a --std=$(VHD_STD) --workdir=work/$@ ../src/pkg.vhd ../src/sequencer.vhd ../src/hex_sequencer.vhd
-	ghdl -a --std=$(VHD_STD) --workdir=work/$@ ../src/$@.vhd
+	ghdl -a --std=$(VHD_STD) -fpsl --workdir=work/$@ ../src/$@.vhd
 	ghdl -a --std=$(VHD_STD) --workdir=work/$@ work/$@/testbench.vhd
-	ghdl -e --std=$(VHD_STD) --workdir=work/$@ -o work/$@/tb_$@ tb_$@
+	ghdl -e --std=$(VHD_STD) -fpsl --workdir=work/$@ -o work/$@/tb_$@ tb_$@
 	cd work/$@; ghdl -r --std=$(VHD_STD) tb_$@ --wave=$@.ghw --psl-report=$@_psl_coverage.json
 
 work/%/testbench.vhd: template.vhd
