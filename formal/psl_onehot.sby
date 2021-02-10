@@ -1,0 +1,19 @@
+[tasks]
+bmc
+
+[options]
+depth 25
+bmc: mode bmc
+
+[engines]
+bmc: smtbmc z3
+
+[script]
+bmc: ghdl --std=08 pkg.vhd sequencer.vhd hex_sequencer.vhd psl_onehot.vhd -e psl_onehot
+prep -top psl_onehot
+
+[files]
+../src/pkg.vhd
+../src/sequencer.vhd
+../src/hex_sequencer.vhd
+../src/psl_onehot.vhd

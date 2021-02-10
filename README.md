@@ -65,6 +65,8 @@ The next lists will grow during further development
 * `stable()` function (Synthesis only)
 * `rose()` function (Synthesis only)
 * `fell()` function (Synthesis only)
+* `onehot()` function (Synthesis only)
+* `onehot0()` function (Synthesis only)
 
 ### Convenient stuff
 
@@ -85,7 +87,7 @@ The next lists will grow during further development
 * `forall` operator
 * `for` operator
 * Synthesis of strong operator versions
-* PSL functions (`prev()`, `stable()`,`rose()` & `fell()` are implemented for synthesis)
+* PSL functions (`prev()`, `stable()`,`rose()`, `fell()`, `onehot()` & `onehot0()` are implemented for synthesis)
 * PSL macros (`%for`, `%if`)
 
 ## Under investigation
