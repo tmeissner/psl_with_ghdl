@@ -59,7 +59,7 @@ The next lists will grow during further development
 * or operator (`|`)
 * `within` operator
 
-### Functions
+### Built-in functions
 
 * `prev()` function (Synthesis only)
 * `stable()` function (Synthesis only)
@@ -75,20 +75,22 @@ The next lists will grow during further development
 * Partial support of named properties (simulation only)
 * Partial support of PSL `endpoint` (simulation only, in PSL comments)
 
-
 ### Yosys formal extensions (reference to [Symbiyosys docs](https://symbiyosys.readthedocs.io/en/latest/verilog.html#unconstrained-variables))
 
 * `anyconst` attribute (synthesis only)
 * `anyseq` attribute (synthesis only)
 
-
 ## Not yet supported by GHDL:
 
 * `forall` operator
 * `for` operator
+* Synthesis of built-in functions `countones()`, `isunknown()`
 * Synthesis of strong operator versions
-* PSL functions (`prev()`, `stable()`,`rose()`, `fell()`, `onehot()` & `onehot0()` are implemented for synthesis)
+* Synthesis of named sequences & properties
+* Simulation of built-in functions
+* Simulation of PSL vunits
 * PSL macros (`%for`, `%if`)
+* `union` expression
 
 ## Under investigation
 

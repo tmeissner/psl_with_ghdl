@@ -1,5 +1,6 @@
 psl_tests := \
 psl_always \
+psl_logical_iff \
 psl_logical_implication \
 psl_never \
 psl_next \
@@ -30,7 +31,8 @@ psl_prev \
 psl_stable \
 psl_rose \
 psl_fell \
-psl_logical_iff \
+psl_onehot \
+psl_onehot0 \
 psl_vunit \
 yosys_anyconst \
 yosys_anyseq
