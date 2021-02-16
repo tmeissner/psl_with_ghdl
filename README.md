@@ -92,8 +92,9 @@ The next lists will grow during further development
 * PSL macros (`%for`, `%if`)
 * `union` expression
 
-## Under investigation
+## Supported, but under investigation
 
+* `abort` operator (Seems to be a `sync_abort`, while it has to be a `async_abort`)
 * `before_` operator (Seems that LHS & RHS of operator have to be active at same cycle, see psl_before.vhd)
 * `next_event_a[i to j]` operator
 * `eventually!` behaviour with liveness proofs, see [GHDL issue 1345](https://github.com/ghdl/ghdl/issues/1345)

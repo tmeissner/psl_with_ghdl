@@ -28,4 +28,5 @@ psl_sere_concat \
 psl_sere_fusion \
 psl_sequence \
 psl_property \
-psl_endpoint
+psl_endpoint \
+psl_abort

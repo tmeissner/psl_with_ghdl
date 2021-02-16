@@ -35,4 +35,5 @@ psl_onehot \
 psl_onehot0 \
 psl_vunit \
 yosys_anyconst \
-yosys_anyseq
+yosys_anyseq \
+psl_abort
