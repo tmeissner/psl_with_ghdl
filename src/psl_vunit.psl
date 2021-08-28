@@ -24,5 +24,13 @@ vunit psl_vunit_vu (psl_vunit(beh)) {
     SERE_3_a : assert always {a; a};
   end generate gen_3;
 
+  -- A simple check for counter increasing
+  counter_check : for i in 0 to 14 generate
+    SERE_4_a : assert always
+      {c = std_logic_vector(to_unsigned(i, 4))}
+      |=>
+      {c = std_logic_vector(to_unsigned(i + 1, 4))};
+  end generate counter_check;
+
 
 }
