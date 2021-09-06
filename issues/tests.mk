@@ -8,4 +8,6 @@ issue_1345 \
 issue_1366 \
 issue_1367 \
 issue_1372 \
-issue_1591
+issue_1591 \
+issue_1658 \
+issue_1832

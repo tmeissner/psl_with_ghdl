@@ -76,6 +76,9 @@ begin
   default clock is rising_edge(clk);
 
   -- This assertion should hold
+  -- Beware: As this is a liveness property, SymbiYosys has
+  -- to be used in live mode. Currently GHDL doesn't really support
+  -- liveness properties in synthesis (needed for formal verification).
   INF_a : assert always {a} |=> {not b[*0 to inf]; b};
 
 
