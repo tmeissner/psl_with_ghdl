@@ -109,6 +109,8 @@ The next lists will grow during further development
 * [Wikipedia about PSL](https://en.wikipedia.org/wiki/Property_Specification_Language)
 * [Doulos Designer's Guide To PSL](https://www.doulos.com/knowhow/psl/)
 * [Project VeriPage PSL Tutorial](http://www.project-veripage.com/psl_tutorial_1.php)
+* [FirstEDA Blog - An Introduction to Assertion-Based Verification](https://firsteda.com/news/an-introduction-to-assertion-based-verification-part-1)
+* [FirstEDA Blog - Achieving Better Coverage with VHDL](https://firsteda.com/news/achieving-better-coverage-with-vhdl-part-2)
 * [1850-2010 - IEEE Standard for PSL](https://standards.ieee.org/standard/1850-2010.html)
 * [A Practical Introduction to PSL Book](https://www.springer.com/gp/book/9780387361239)
 * [Formal Verification Book](https://www.elsevier.com/books/formal-verification/seligman/978-0-12-800727-3)
