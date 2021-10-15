@@ -32,5 +32,15 @@ vunit psl_vunit_vu (psl_vunit(beh)) {
       {c = std_logic_vector(to_unsigned(i + 1, 4))};
   end generate counter_check;
 
+  -- Using named sequences
+  sequence s_a is {a; a};
+  sequence s_b is {b};
+
+  SERE_5_a : assert always s_a |-> s_b;
+
+  -- Using named property
+  property p_a is always s_a |-> s_b;
+
+  PROP_0_a : assert p_a;
 
 }

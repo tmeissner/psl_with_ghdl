@@ -77,8 +77,8 @@ The next lists will grow during further development
 ### Convenient stuff
 
 * Partial support of PSL vunits (synthesis only)
-* Partial support of named sequences (simulation only)
-* Partial support of named properties (simulation only)
+* Partial support of named sequences (some parameter types missing)
+* Partial support of named properties (some parameter types missing)
 * Partial support of PSL `endpoint` (simulation only, in PSL comments)
 
 ### Yosys formal extensions (reference to [Symbiyosys docs](https://symbiyosys.readthedocs.io/en/latest/verilog.html#unconstrained-variables))
@@ -92,7 +92,6 @@ The next lists will grow during further development
 * `for` operator
 * Synthesis of built-in functions `countones()`, `isunknown()`
 * Synthesis of strong operator versions
-* Synthesis of named sequences & properties
 * Simulation of built-in functions
 * Simulation of PSL vunits
 * PSL macros (`%for`, `%if`)

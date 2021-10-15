@@ -31,7 +31,6 @@ begin
   default clock is rising_edge(clk);
 
   -- Transfer property
-  -- Don't works in synthesis, only in simulation
   property transfer_3 is always (
     {req} |=> {{avalid; busy[->3]; adone}; {data[->3]; ddone}}
   );
@@ -42,9 +41,7 @@ begin
   PROP_0_a : assert transfer_3;
 
   -- Properties can have parameters
-  -- Don't works in synthesis, only in simulation
-  -- Parameters with repetition operators lead to crash:
-  -- raised SYSTEM.ASSERTIONS.ASSERT_FAILURE : no field Hash
+  -- This assertion holds
   property transfer_3_p (boolean v, ad, dd) is always (
     {req} |=> {{v; busy[->3]; ad}; {data[->3]; dd}}
   );

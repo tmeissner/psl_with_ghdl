@@ -31,12 +31,10 @@ begin
   default clock is rising_edge(clk);
 
   -- Address phase sequence
-  -- Don't works in synthesis, only in simulation
   sequence a_phase is {avalid; busy[->3]; adone};
 
   -- Data phase sequence
   -- Sequences can have parameters
-  -- Don't works in synthesis, only in simulation
   sequence d_phase (boolean done) is {data[->3]; done};
 
   -- SERE concatenation operator
