@@ -28,6 +28,8 @@ psl_sere_non_len_matching_and \
 psl_sere_concat \
 psl_sere_fusion \
 psl_prev \
+psl_property \
+psl_sequence \
 psl_stable \
 psl_rose \
 psl_fell \
