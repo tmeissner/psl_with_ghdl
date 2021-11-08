@@ -80,6 +80,7 @@ The next lists will grow during further development
 * Partial support of named sequences (some parameter types missing)
 * Partial support of named properties (some parameter types missing)
 * Partial support of PSL `endpoint` (simulation only, in PSL comments)
+* vunit inhiterance (`inherit`, synthesis only)
 
 ### Yosys formal extensions (reference to [Symbiyosys docs](https://symbiyosys.readthedocs.io/en/latest/verilog.html#unconstrained-variables))
 

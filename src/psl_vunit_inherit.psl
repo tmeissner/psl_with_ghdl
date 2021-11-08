@@ -1,0 +1,23 @@
+vunit psl_vunit_inherit_0_vu {
+  
+  -- Named sequences
+  sequence s_a (boolean data) is {data; data};
+  sequence s_b (boolean data) is {data};
+
+}
+
+
+vunit psl_vunit_inherit_vu (psl_vunit_inherit(beh)) {
+
+  inherit psl_vunit_inherit_0_vu;
+
+  -- All is sensitive to rising edge of clk
+  default clock is rising_edge(clk);
+
+  -- This assertion holds
+  SERE_0_a : assert always s_a(a) |-> s_b(b);
+
+  -- This assertion holds, similar to SERE_0_a
+  PROP_0_a : assert always {a; a} |-> {b};
+
+}

@@ -36,6 +36,7 @@ psl_fell \
 psl_onehot \
 psl_onehot0 \
 psl_vunit \
+psl_vunit_inherit \
 yosys_anyconst \
 yosys_anyseq \
 psl_abort

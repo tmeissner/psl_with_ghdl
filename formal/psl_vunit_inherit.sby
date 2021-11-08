@@ -1,0 +1,19 @@
+[tasks]
+bmc
+
+[options]
+depth 25
+bmc: mode bmc
+
+[engines]
+bmc: smtbmc z3
+
+[script]
+bmc: ghdl --std=08 pkg.vhd sequencer.vhd psl_vunit_inherit.vhd psl_vunit_inherit.psl -e psl_vunit_inherit
+prep -top psl_vunit_inherit
+
+[files]
+../src/pkg.vhd
+../src/sequencer.vhd
+../src/psl_vunit_inherit.vhd
+../src/psl_vunit_inherit.psl
