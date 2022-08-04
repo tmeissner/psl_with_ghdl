@@ -32,10 +32,11 @@ begin
   default clock is rising_edge(clk);
 
   -- Check for one possible value of b
-  -- Both assertions should hold
-  -- Assertions don't hold, assuming GHDL bug
-  NEXT_EVENT_0_a : assert always ((a and b = x"4") -> next_event_a(c)[1 to 4](b = x"4"));
-  NEXT_EVENT_1_a : assert always ((a and b = x"5") -> next_event_a(c)[1 to 4](b = x"5"));
+  -- Both assertions hold (see ghdl/ghdl#2157)
+  NEXT_EVENT_0_a : assert always ((a and b = x"4") -> next_event_a(c)[1 to 4](b = x"4"))
+    report "NEXT_EVENT_0_a failed";
+  NEXT_EVENT_1_a : assert always ((a and b = x"5") -> next_event_a(c)[1 to 4](b = x"5"))
+    report "NEXT_EVENT_1_a failed";
 
 
   -- Check for all possible values of b

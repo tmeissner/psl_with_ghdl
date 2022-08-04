@@ -100,7 +100,6 @@ The next lists will grow during further development
 
 ## Supported, but under investigation
 
-* `next_event_a[i to j]` operator
 * `eventually!` behaviour with liveness proofs, see [GHDL issue 1345](https://github.com/ghdl/ghdl/issues/1345)
 
 ## Further Ressources
