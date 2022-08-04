@@ -37,40 +37,48 @@ begin
   default clock is rising_edge(clk);
 
   -- This assertion holds
-  BEFORE_0_a : assert always (a -> next (b before a));
+  BEFORE_0_a : assert always (a -> next (b before a))
+    report "BEFORE_0_a failed";
 
   -- This assertion doesn't hold at cycle 5
-  BEFORE_1_a : assert always (c -> next (d before c));
+  BEFORE_1_a : assert always (c -> next (d before c))
+    report "BEFORE_1_a failed";
 
   -- This assertion doesn't hold at cycle 6
-  BEFORE_2_a : assert always (e -> next (f before e));
+  BEFORE_2_a : assert always (e -> next (f before e))
+    report "BEFORE_2_a failed";
 
   -- This is flawed variant of the former assertion
   -- because even in cycle 1 the b before a property has
   -- to hold, which is clearly not what we want
   -- This assertion doesn't hold at cycle 1
-  -- Furthermore this assertion leads to a GHDL synthesis crash with bug report
-  -- BEFORE_3_a : assert always (a -> (b before a));
+  -- Furthermore this assertion leads to a GHDL crash with bug report
+  -- BEFORE_3_a : assert always (a -> (b before a))
+  --  report "BEFORE_3_a failed";
 
-  -- This assertion should hold but does not at cycle 3
-  -- Potential GHDL bug?
-  BEFORE_4_a : assert always (a -> next (b before_ a));
+  -- This assertion holds (see ghdl/ghdl#2153)
+  BEFORE_4_a : assert always (a -> next (b before_ a))
+    report "BEFORE_4_a failed";
 
-  -- This assertion should hold but does not at cycle 9
-  -- Potential GHDL bug?
-  BEFORE_5_a : assert always (c -> next (d before_ c));
+  -- This assertion holds (see ghdl/ghdl#2153)
+  BEFORE_5_a : assert always (c -> next (d before_ c))
+    report "BEFORE_5_a failed";
 
   -- This assertion doesn't at cycle 6
-  BEFORE_6_a : assert always (e -> next (f before_ e));
+  BEFORE_6_a : assert always (e -> next (f before_ e))
+    report "BEFORE_6_a failed";
 
   -- This assertion holds
-  BEFORE_7_a : assert always (a -> (b or next (b before a)));
+  BEFORE_7_a : assert always (a -> (b or next (b before a)))
+    report "BEFORE_7_a failed";
 
   -- This assertion doesn't hold at cycle 5
-  BEFORE_8_a : assert always (c -> (d or next (d before c)));
+  BEFORE_8_a : assert always (c -> (d or next (d before c)))
+    report "BEFORE_8_a failed";
 
   -- This assertion holds
-  BEFORE_9_a : assert always (e -> (f or next (f before e)));
+  BEFORE_9_a : assert always (e -> (f or next (f before e)))
+    report "BEFORE_9_a failed";
 
   -- Stop simulation after longest running sequencer is finished
   -- Simulation only code by using pragmas

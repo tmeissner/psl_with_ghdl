@@ -100,7 +100,6 @@ The next lists will grow during further development
 
 ## Supported, but under investigation
 
-* `before_` operator (Seems that LHS & RHS of operator have to be active at same cycle, see psl_before.vhd)
 * `next_event_a[i to j]` operator
 * `eventually!` behaviour with liveness proofs, see [GHDL issue 1345](https://github.com/ghdl/ghdl/issues/1345)
 
