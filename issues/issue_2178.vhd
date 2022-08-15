@@ -70,11 +70,15 @@ begin
 
   TEST_0 : cover seq(a, b) report "TEST_0 hit";
 
+  -- One could negate the parameter when calling the
+  -- sequence, but this is not very intuitive
+  TEST_1 : assert never seq(a, not b);
+
   -- This doesnt work:
   -- error: PSL declaration "a" not allowed in an expression
-  sequence seq1 (boolean d0) is {not d0; d0 = '1'};
+  sequence seq1 (boolean d0) is {not d0; d0 = true};
   
-  TEST_1 : cover seq1(a) report "TEST_1 hit";
+  TEST_2 : cover seq1(a) report "TEST_1 hit";
 
 end architecture psl;
 
