@@ -15,6 +15,9 @@ architecture psl of psl_logical_iff is
 
   signal a, b, c : std_logic;
 
+  -- All is sensitive to rising edge of clk
+  default clock is rising_edge(clk);
+
 begin
 
 
@@ -23,9 +26,6 @@ begin
   SEQ_B : sequencer generic map ("_-______-__") port map (clk, b);
   SEQ_C : sequencer generic map ("_-__-______") port map (clk, c);
 
-
-  -- All is sensitive to rising edge of clk
-  default clock is rising_edge(clk);
 
   -- This assertion holds
   IFF_0_a : assert always (a <-> b or c);

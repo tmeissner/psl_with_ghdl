@@ -15,15 +15,15 @@ architecture psl of psl_always is
 
   signal a : std_logic;
 
+  -- All is sensitive to rising edge of clk
+  default clock is rising_edge(clk);
+
 begin
 
 
   --                            012345
   SEQ : sequencer generic map ("--____") port map (clk, a);
 
-
-  -- All is sensitive to rising edge of clk
-  default clock is rising_edge(clk);
 
   -- Beware: potential pitfall!
   -- Every time a PSL assertion is similar to a concurrent

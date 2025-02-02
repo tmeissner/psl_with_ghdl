@@ -15,6 +15,9 @@ architecture psl of psl_sere_non_consecutive_goto_repetition is
 
   signal req, busy, done : std_logic;
 
+  -- All is sensitive to rising edge of clk
+  default clock is rising_edge(clk);
+
 begin
 
 
@@ -23,9 +26,6 @@ begin
   SEQ_BUSY : sequencer generic map ("__-_-_-__") port map (clk, busy);
   SEQ_DONE : sequencer generic map ("_______-_") port map (clk, done);
 
-
-  -- All is sensitive to rising edge of clk
-  default clock is rising_edge(clk);
 
   -- Non consecutive repetition of 3 cycles without padding
   -- busy has to hold on 3 cycles between req & done

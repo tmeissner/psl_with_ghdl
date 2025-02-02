@@ -16,6 +16,9 @@ architecture psl of psl_endpoint is
   signal a, b : std_logic;
   signal c, d : std_logic;
 
+  -- All is sensitive to rising edge of clk
+  default clock is rising_edge(clk);
+
 begin
 
 
@@ -25,9 +28,6 @@ begin
   SEQ_C : sequencer generic map ("____-______-__") port map (clk, c);
   SEQ_D : sequencer generic map ("____________-_") port map (clk, d);
 
-
-  -- All is sensitive to rising edge of clk
-  default clock is rising_edge(clk);
 
   -- only endpoint in psl comment works
   -- psl endpoint ENDPOINT_1_e is {a; b[*3]; c};

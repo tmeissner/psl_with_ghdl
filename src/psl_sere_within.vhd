@@ -15,6 +15,9 @@ architecture psl of psl_sere_within is
 
   signal req, busy, valid, done : std_logic;
 
+  -- All is sensitive to rising edge of clk
+  default clock is rising_edge(clk);
+
 begin
 
 
@@ -24,9 +27,6 @@ begin
   SEQ_VALID : sequencer generic map ("___-_-_-__") port map (clk, valid);
   SEQ_DONE  : sequencer generic map ("________-_") port map (clk, done);
 
-
-  -- All is sensitive to rising edge of clk
-  default clock is rising_edge(clk);
 
   -- Occurrance of a SERE during another SERE
   -- valid has to hold 3 times during busy holds and done does't hold

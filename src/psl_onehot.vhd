@@ -15,6 +15,9 @@ architecture psl of psl_onehot is
 
   signal a, b : std_logic_vector(3 downto 0);
 
+  -- All is sensitive to rising edge of clk
+  default clock is rising_edge(clk);
+
 begin
 
 
@@ -22,9 +25,6 @@ begin
   SEQ_A : hex_sequencer generic map ("111222444888888") port map (clk, a);
   SEQ_B : hex_sequencer generic map ("111222444888999") port map (clk, b);
 
-
-  -- All is sensitive to rising edge of clk
-  default clock is rising_edge(clk);
 
   -- This assertion holds
   ONEHOT_0_a : assert always onehot(a);

@@ -16,6 +16,9 @@ architecture psl of psl_sere_or is
   signal req2, req4, busy, valid, done : std_logic;
   signal req, wen, ends                : std_logic;
 
+  -- All is sensitive to rising edge of clk
+  default clock is rising_edge(clk);
+
 begin
 
 
@@ -31,9 +34,6 @@ begin
   SEQ_WEN  : sequencer generic map ("___-_-_____-_-_-_-__") port map (clk, wen);
   SEQ_ENDS : sequencer generic map ("_______-__________-_") port map (clk, ends);
 
-
-  -- All is sensitive to rising edge of clk
-  default clock is rising_edge(clk);
 
   -- Transfer started by req2 with 2 valids has to be finished by done
   -- This assertion holds

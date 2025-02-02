@@ -17,6 +17,9 @@ architecture psl of psl_before is
   signal c, d : std_logic;
   signal e, f : std_logic;
 
+  -- All is sensitive to rising edge of clk
+  default clock is rising_edge(clk);
+
 begin
 
 
@@ -32,9 +35,6 @@ begin
   SEQ_E : sequencer generic map ("_-____-____") port map (clk, e);
   SEQ_F : sequencer generic map ("_-_______-_") port map (clk, f);
 
-
-  -- All is sensitive to rising edge of clk
-  default clock is rising_edge(clk);
 
   -- This assertion holds
   BEFORE_0_a : assert always (a -> next (b before a))

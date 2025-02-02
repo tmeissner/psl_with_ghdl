@@ -21,11 +21,11 @@ architecture psl of yosys_anyseq is
   attribute anyseq of a : signal is true;
   attribute anyseq of b : signal is true;
 
-begin
-
-
   -- All is sensitive to rising edge of clk
   default clock is rising_edge(clk);
+
+begin
+
 
   -- a should always be high 
   ANY_ASSUME_0_a : assume always a;

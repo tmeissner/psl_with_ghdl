@@ -17,6 +17,9 @@ architecture psl of psl_sere_consecutive_repetition is
   signal d, e, f : std_logic;
   signal g, h, i : std_logic;
 
+  -- All is sensitive to rising edge of clk
+  default clock is rising_edge(clk);
+
 begin
 
 
@@ -35,9 +38,6 @@ begin
   SEQ_H : sequencer generic map ("__-_-_-___") port map (clk, h);
   SEQ_I : sequencer generic map ("________-_") port map (clk, i);
 
-
-  -- All is sensitive to rising edge of clk
-  default clock is rising_edge(clk);
 
   -- Simple SERE with repetitions done manual without operators
   -- This assertion holds

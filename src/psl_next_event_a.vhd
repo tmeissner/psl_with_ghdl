@@ -18,6 +18,9 @@ architecture psl of psl_next_event_a is
   signal a, c : std_logic;
   signal b    : std_logic_vector(3 downto 0);
 
+  -- All is sensitive to rising edge of clk
+  default clock is rising_edge(clk);
+
 begin
 
 
@@ -26,10 +29,6 @@ begin
   SEQ_B : hex_sequencer generic map ("443334477444433355554555") port map (clk, b);
   SEQ_C : sequencer generic map     ("_____-___---______--_--_") port map (clk, c);
 
-
-
-  -- All is sensitive to rising edge of clk
-  default clock is rising_edge(clk);
 
   -- Check for one possible value of b
   -- Both assertions hold (see ghdl/ghdl#2157)

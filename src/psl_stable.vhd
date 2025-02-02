@@ -16,6 +16,9 @@ architecture psl of psl_stable is
   signal valid, ack, a : std_logic;
   signal b             : std_logic_vector(3 downto 0);
 
+  -- All is sensitive to rising edge of clk
+  default clock is rising_edge(clk);
+
 begin
 
 
@@ -25,9 +28,6 @@ begin
   SEQ_A     : sequencer generic map ("_--_______") port map (clk, a);
   SEQ_B : hex_sequencer generic map ("0110066600") port map (clk, b);
 
-
-  -- All is sensitive to rising edge of clk
-  default clock is rising_edge(clk);
 
   -- This assertion holds
   STABLE_0_a : assert always {not valid; valid} |=> (stable(a) until_ ack);

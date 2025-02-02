@@ -15,6 +15,9 @@ architecture psl of psl_eventually is
 
   signal a, b : std_logic;
 
+  -- All is sensitive to rising edge of clk
+  default clock is rising_edge(clk);
+
 begin
 
 
@@ -22,9 +25,6 @@ begin
   SEQ_A : sequencer generic map ("__-__-____-_____") port map (clk, a);
   SEQ_B : sequencer generic map ("_______-______-_") port map (clk, b);
 
-
-  -- All is sensitive to rising edge of clk
-  default clock is rising_edge(clk);
 
   -- This assertion holds
   -- This assertion leads to a GHDL synthesis crash with bug report

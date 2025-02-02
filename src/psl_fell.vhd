@@ -15,6 +15,9 @@ architecture psl of psl_fell is
 
   signal a, b, c : std_logic;
 
+  -- All is sensitive to rising edge of clk
+  default clock is rising_edge(clk);
+
 begin
 
 
@@ -23,9 +26,6 @@ begin
   SEQ_B : sequencer generic map ("_-__-_---__") port map (clk, b);
   SEQ_C : sequencer generic map ("__-__-___-_") port map (clk, c);
 
-
-  -- All is sensitive to rising edge of clk
-  default clock is rising_edge(clk);
 
   -- This assertion holds
   FELL_0_a : assert always (fell(a) -> c);

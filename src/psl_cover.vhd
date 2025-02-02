@@ -15,6 +15,9 @@ architecture psl of psl_cover is
 
   signal req, busy, done : std_logic;
 
+  -- All is sensitive to rising edge of clk
+  default clock is rising_edge(clk);
+
 begin
 
 
@@ -23,9 +26,6 @@ begin
   SEQ_BUSY : sequencer generic map ("__-_-_-___") port map (clk, busy);
   SEQ_DONE : sequencer generic map ("________-_") port map (clk, done);
 
-
-  -- All is sensitive to rising edge of clk
-  default clock is rising_edge(clk);
 
   -- Covers a transfer request
   -- This cover directive holds at cycle 1

@@ -15,6 +15,9 @@ architecture psl of psl_sere_fusion is
 
   signal req, avalid, busy, adone, data, ddone : std_logic;
 
+  -- All is sensitive to rising edge of clk
+  default clock is rising_edge(clk);
+
 begin
 
 
@@ -26,9 +29,6 @@ begin
   SEQ_DATA   : sequencer generic map ("_______---___") port map (clk, data);
   SEQ_DDONE  : sequencer generic map ("__________-__") port map (clk, ddone);
 
-
-  -- All is sensitive to rising edge of clk
-  default clock is rising_edge(clk);
 
   -- SERE fusion operator
   -- SERE fusion is like concatenation (;) but starts at

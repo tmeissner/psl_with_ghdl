@@ -19,6 +19,9 @@ architecture psl of psl_prev is
   signal di, do : std_logic_vector(3 downto 0);
   signal cnt    : std_logic_vector(3 downto 0);
 
+  -- All is sensitive to rising edge of clk
+  default clock is rising_edge(clk);
+
 begin
 
 
@@ -30,10 +33,6 @@ begin
 
   SEQ_CNT : hex_sequencer generic map ("0123456789ABCDEF") port map (clk, cnt);
 
-
-
-  -- All is sensitive to rising edge of clk
-  default clock is rising_edge(clk);
 
   -- This assertion holds
   PREV_0_a : assert always (valid -> a = prev(a));

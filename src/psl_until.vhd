@@ -17,6 +17,9 @@ architecture psl of psl_until is
   signal d, e, f : std_logic;
   signal g, h, i : std_logic;
 
+  -- All is sensitive to rising edge of clk
+  default clock is rising_edge(clk);
+
 begin
 
 
@@ -35,9 +38,6 @@ begin
   SEQ_H : sequencer generic map ("______") port map (clk, h);
   SEQ_I : sequencer generic map ("__-___") port map (clk, i);
 
-
-  -- All is sensitive to rising edge of clk
-  default clock is rising_edge(clk);
 
   -- This assertion holds
   UNTIL_0_a : assert always (a -> next (b until c));

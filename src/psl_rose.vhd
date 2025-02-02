@@ -15,6 +15,9 @@ architecture psl of psl_rose is
 
   signal a, b : std_logic;
 
+  -- All is sensitive to rising edge of clk
+  default clock is rising_edge(clk);
+
 begin
 
 
@@ -22,9 +25,6 @@ begin
   SEQ_A : sequencer generic map ("_--__-_---_") port map (clk, a);
   SEQ_B : sequencer generic map ("_-___-_-___") port map (clk, b);
 
-
-  -- All is sensitive to rising edge of clk
-  default clock is rising_edge(clk);
 
   -- This assertion holds
   ROSE_0_a : assert always (rose(a) -> b);

@@ -15,6 +15,9 @@ architecture psl of psl_logical_implication is
 
   signal a, b, c, d : std_logic;
 
+  -- All is sensitive to rising edge of clk
+  default clock is rising_edge(clk);
+
 begin
 
 
@@ -24,9 +27,6 @@ begin
   SEQ_C : sequencer generic map ("_-__-______") port map (clk, c);
   SEQ_D : sequencer generic map ("___________") port map (clk, d);
 
-
-  -- All is sensitive to rising edge of clk
-  default clock is rising_edge(clk);
 
   -- This assertion holds
   IMPLICATION_0_a : assert always (a -> b or c);

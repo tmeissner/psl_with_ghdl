@@ -16,6 +16,9 @@ architecture psl of psl_next_event is
   signal a, b, c : std_logic;
   signal d, e, f : std_logic;
 
+  -- All is sensitive to rising edge of clk
+  default clock is rising_edge(clk);
+
 begin
 
   --                              012345678901234
@@ -28,9 +31,6 @@ begin
   SEQ_E : sequencer generic map ("____-_-_--_-__-") port map (clk, e);
   SEQ_F : sequencer generic map ("____-___-__-___") port map (clk, f);
 
-
-  -- All is sensitive to rising edge of clk
-  default clock is rising_edge(clk);
 
   -- This assertion holds
   NEXT_EVENT_0_a : assert always (a -> next_event(b)(c));

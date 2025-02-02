@@ -15,6 +15,9 @@ architecture psl of psl_sere_non_len_matching_and is
 
   signal req, done0, done1, done2, ack : std_logic;
 
+  -- All is sensitive to rising edge of clk
+  default clock is rising_edge(clk);
+
 begin
 
 
@@ -25,9 +28,6 @@ begin
   SEQ_DONE2 : sequencer generic map ("____-______") port map (clk, done2);
   SEQ_ACK   : sequencer generic map ("_________-_") port map (clk, ack);
 
-
-  -- All is sensitive to rising edge of clk
-  default clock is rising_edge(clk);
 
   -- Non length matching AND three SERE
   -- Each of done0, done1 & done2 has to hold a cycle after
